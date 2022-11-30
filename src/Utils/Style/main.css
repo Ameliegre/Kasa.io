@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Overpass:wght@400;700&display=swap");
+* {
+  margin: 1% 2%;
+  color: #FF6060;
+}
+
+#root {
+  margin: 0;
+}
+
+* {
+  font-family: "Montserrat";
+}
+
+nav {
+  font-size: 24px;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pink_logo {
+  margin-left: 0%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+nav a {
+  text-decoration: none;
+  margin: 30px;
+  border-bottom: transparent solid 2px;
+}
+nav a:hover {
+  border-bottom: #FF6060 solid 2px;
+}/*# sourceMappingURL=main.css.map */
