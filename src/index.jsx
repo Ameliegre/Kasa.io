@@ -16,9 +16,9 @@ root.render(
       <Header/>
       <Routes>
         <Route exact path="/" element={<Home/>}/>
-        <Route path="/*" element={<Error/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/lodging-form" element={<LodgingForm/>}/>
+        <Route path="*" element={<Error/>}/>
       </Routes>
     </React.StrictMode>
   </BrowserRouter>
