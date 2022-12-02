@@ -2,10 +2,7 @@
 * {
   margin: 1% 2%;
   color: #FF6060;
-}
-
-#root {
-  margin: 0;
+  box-sizing: border-box;
 }
 
 * {
@@ -21,11 +18,10 @@ h1 {
   font-size: 36px;
 }
 
-.banner-container {
-  height: 300px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.card-title {
+  font-size: 18px;
+  width: 100%;
+  margin: 0;
 }
 
 .imgSee-Banner {
@@ -37,10 +33,49 @@ h1 {
   filter: contrast(80%);
 }
 
-h1 {
-  position: relative;
-  top: -38%;
+.seeBanner-Title {
+  position: absolute;
+  bottom: 50px;
   color: white;
+}
+
+.card-element {
+  height: 254px;
+  width: 254px;
+  margin: 2%;
+  border-radius: 25px;
+  background-color: #FF6060;
+  opacity: 1;
+}
+.card-element:hover {
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366);
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+  border-radius: 25px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0;
+}
+.card-img:hover {
+  opacity: 0.4;
+  transition: all 0.5s ease-out;
+}
+
+.card-title {
+  position: absolute;
+  width: 246px;
+  margin-top: 200px;
+  margin-left: 10px;
+  color: white;
+  text-shadow: 1px 1px 2px grey;
+}
+.card-title:hover {
+  text-shadow: none;
 }
 
 .header-container {
@@ -67,4 +102,38 @@ nav a {
 }
 nav a:hover {
   border-bottom: #FF6060 solid 2px;
+}
+
+#root {
+  margin: 0;
+}
+
+.banner-container {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.home-container {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-container {
+  background-color: #F6F6F6;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2%;
+  margin-top: 2%;
+}
+
+.footer-container {
+  background-color: black;
+  margin: 0;
 }/*# sourceMappingURL=main.css.map */

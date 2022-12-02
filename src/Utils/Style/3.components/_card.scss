@@ -1,0 +1,38 @@
+.card-element {
+    height: 254px;
+    width: 254px;
+    margin: 2%;
+    border-radius: 25px;
+    background-color: $color-primary;
+    opacity: 1;
+    &:hover {
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366);
+        
+    }
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    margin: 0;
+    &:hover {
+        opacity: 0.4;
+        transition: all 0.5s ease-out; 
+    }
+}
+
+.card-title {
+    position: absolute;
+    width: 246px;
+    margin-top: 200px;
+    margin-left: 10px;
+    color: $color-text;
+    text-shadow: 1px 1px 2px grey;
+    &:hover {
+        text-shadow: none;
+    }
+}

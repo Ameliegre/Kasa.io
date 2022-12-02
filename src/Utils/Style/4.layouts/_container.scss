@@ -1,0 +1,33 @@
+#root {
+    margin:0;
+}
+
+.banner-container {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.home-container {
+    margin:0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-container {
+    background-color: #F6F6F6;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2%;
+    margin-top: 2%;
+}
+
+.footer-container {
+    background-color: $footer-color;
+    margin: 0;
+}
