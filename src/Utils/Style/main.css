@@ -7,14 +7,14 @@
 
 * {
   font-family: "Montserrat";
+  font-weight: 500;
 }
 
 nav {
   font-size: 24px;
 }
 
-h1 {
-  font-weight: 500;
+.banner-title {
   font-size: 36px;
 }
 
@@ -26,7 +26,15 @@ h1 {
   font-size: 16px;
 }
 
-.imgSee-Banner {
+.collapse-title {
+  font-size: 24px;
+}
+
+.collapse-text {
+  font-weight: 400;
+}
+
+.img-Banner {
   width: 100%;
   margin: 0;
   -o-object-fit: cover;
@@ -35,7 +43,7 @@ h1 {
   filter: contrast(80%);
 }
 
-.seeBanner-Title {
+.banner-title {
   position: absolute;
   bottom: 50px;
   color: white;
@@ -79,6 +87,31 @@ h1 {
 }
 .card-title:hover {
   text-shadow: none;
+  opacity: 1;
+}
+
+.collapse-element {
+  background-color: #FF6060;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-radius: 5px;
+}
+
+.collapse-title {
+  color: white;
+}
+
+.collapse-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.collapse-btn {
+  border: transparent;
+  background: transparent;
+  cursor: pointer;
 }
 
 .pink_logo {
@@ -109,17 +142,18 @@ nav a:hover {
 
 .banner-container {
   height: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
 }
 
-.home-container {
+.page-container {
   margin: 3% 5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .card-container {
@@ -131,6 +165,14 @@ nav a:hover {
   justify-content: space-evenly;
   padding: 2%;
   margin-top: 2%;
+}
+
+.collapse-container {
+  background-color: #F6F6F6;
+  width: 76%;
+  height: auto;
+  margin-top: 2%;
+  border-radius: 5px;
 }
 
 .footer-container {

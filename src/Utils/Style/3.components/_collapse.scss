@@ -1,0 +1,23 @@
+.collapse-element {
+    background-color: $color-primary;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.collapse-title {
+    color:$color-text;
+}
+
+.collapse-text {
+    padding: 20px;
+    text-align: left;
+}
+
+.collapse-btn {
+    border:transparent;
+    background: transparent;
+    cursor: pointer;
+}

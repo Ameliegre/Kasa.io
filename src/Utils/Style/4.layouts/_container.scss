@@ -8,21 +8,22 @@
 
 .banner-container {
     height: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
 }
 
-.home-container {
+.page-container {
     margin:3% 5%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
 }
 
 .card-container {
-    background-color: #F6F6F6;
+    background-color: $background-color;
     border-radius: 25px;
     display: flex;
     flex-direction: row;
@@ -30,6 +31,14 @@
     justify-content: space-evenly;
     padding: 2%;
     margin-top: 2%;
+}
+
+.collapse-container {
+    background-color: $background-color;
+    width: 76%;
+    height: auto;
+    margin-top:2%;
+    border-radius: 5px;
 }
 
 .footer-container {
