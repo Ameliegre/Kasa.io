@@ -5,6 +5,7 @@
     justify-content: space-between;
     padding: 5px 20px;
     border-radius: 5px;
+    margin-bottom: 20px;
 }
 
 .collapse-title {
@@ -20,4 +21,9 @@
     border:transparent;
     background: transparent;
     cursor: pointer;
+}
+
+.collapse {
+    margin-bottom: 20px;
+    background-color: $background-color;
 }

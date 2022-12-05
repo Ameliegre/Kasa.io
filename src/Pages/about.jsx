@@ -9,12 +9,8 @@ function About () {
                 <img src={mountBanner} alt ='bannière montagne' className='img-Banner'/>
             </Banner>
             <Collapse></Collapse>
-            <Collapse></Collapse>
-            <Collapse></Collapse>
-            <Collapse></Collapse>
         </div>
     )
-    
 }
 
 export default About

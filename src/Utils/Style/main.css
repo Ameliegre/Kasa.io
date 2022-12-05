@@ -97,6 +97,7 @@ nav {
   justify-content: space-between;
   padding: 5px 20px;
   border-radius: 5px;
+  margin-bottom: 20px;
 }
 
 .collapse-title {
@@ -112,6 +113,11 @@ nav {
   border: transparent;
   background: transparent;
   cursor: pointer;
+}
+
+.collapse {
+  margin-bottom: 20px;
+  background-color: #F6F6F6;
 }
 
 .pink_logo {
@@ -168,7 +174,6 @@ nav a:hover {
 }
 
 .collapse-container {
-  background-color: #F6F6F6;
   width: 76%;
   height: auto;
   margin-top: 2%;
