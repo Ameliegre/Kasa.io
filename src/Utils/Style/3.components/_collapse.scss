@@ -5,7 +5,6 @@
     justify-content: space-between;
     padding: 5px 20px;
     border-radius: 5px;
-    margin-bottom: 20px;
 }
 
 .collapse-title {
@@ -15,6 +14,8 @@
 .collapse-text {
     padding: 20px;
     text-align: left;
+    background-color: $background-color;
+    border-radius: 5px;
 }
 
 .collapse-btn {
@@ -25,5 +26,47 @@
 
 .collapse {
     margin-bottom: 20px;
-    background-color: $background-color;
+}
+
+.open {
+     .collapse-img {
+         transition: 0.3S all;
+         transform: rotate(180deg);
+    }
+}
+
+.close {
+    .collapse-img {
+        transition: 0.7s all;
+    }
+}
+
+.slidedown {
+    animation: slidedown 0.7s ;
+}
+
+.slideup {
+    animation: slideup 0.7s;
+}
+
+@keyframes slidedown {
+    from {
+        opacity: 0;
+        transform:translateY(-50px);
+    }
+    to {
+        opacity:1;
+        transform:translateY(0px);
+    }
+}
+
+@keyframes slideup {
+    from {
+        opacity:1;
+        transform:translateY(0px);
+    } to {
+        opacity: 0;
+        transform:translateY(-50px);
+    }
+
 }

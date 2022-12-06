@@ -3,6 +3,7 @@ import mountBanner from '../Assets/big-mountain.png'
 import Collapse from '../Components/collapse'
 
 function About () {
+
     return (
         <div className="page-container">
             <Banner>

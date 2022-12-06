@@ -34,6 +34,19 @@ nav {
   font-weight: 400;
 }
 
+.error-figures {
+  font-size: 200px;
+  font-weight: 700;
+}
+
+.error-text {
+  font-size: 25px;
+}
+
+.error-link {
+  font-size: 15px;
+}
+
 .img-Banner {
   width: 100%;
   margin: 0;
@@ -97,7 +110,6 @@ nav {
   justify-content: space-between;
   padding: 5px 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 .collapse-title {
@@ -107,6 +119,8 @@ nav {
 .collapse-text {
   padding: 20px;
   text-align: left;
+  background-color: #F6F6F6;
+  border-radius: 5px;
 }
 
 .collapse-btn {
@@ -117,7 +131,76 @@ nav {
 
 .collapse {
   margin-bottom: 20px;
-  background-color: #F6F6F6;
+}
+
+.open .collapse-img {
+  transition: 0.3S all;
+  transform: rotate(180deg);
+}
+
+.close .collapse-img {
+  transition: 0.7s all;
+}
+
+.slidedown {
+  -webkit-animation: slidedown 0.7s;
+          animation: slidedown 0.7s;
+}
+
+.slideup {
+  -webkit-animation: slideup 0.7s;
+          animation: slideup 0.7s;
+}
+
+@-webkit-keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slidedown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes slideup {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+@keyframes slideup {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+}
+.error-element {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.error-link {
+  margin: 150px 0px;
 }
 
 .pink_logo {
@@ -178,6 +261,11 @@ nav a:hover {
   height: auto;
   margin-top: 2%;
   border-radius: 5px;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
 }
 
 .footer-container {

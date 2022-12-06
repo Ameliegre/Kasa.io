@@ -34,11 +34,15 @@
 }
 
 .collapse-container {
-    
     width: 76%;
     height: auto;
     margin-top:2%;
     border-radius: 5px;
+}
+
+.error-container {
+    display: flex;
+    justify-content: center;
 }
 
 .footer-container {
