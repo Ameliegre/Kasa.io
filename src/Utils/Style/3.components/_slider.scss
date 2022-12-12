@@ -1,0 +1,25 @@
+.slider-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    img {
+        height: 50px;
+    }
+}
+
+.left {
+        transform: rotate(90deg);
+}
+
+.right {
+    transform: rotate(-90deg);
+}
+
+.pagination {
+    align-self: flex-end;
+    color : $text-color;
+    padding-bottom: 20px;
+}

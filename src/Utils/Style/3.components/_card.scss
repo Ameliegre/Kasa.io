@@ -3,7 +3,7 @@
     width: 254px;
     margin: 2%;
     border-radius: 25px;
-    background-color: $color-primary;
+    background-color: $primary-color;
     opacity: 1;
     &:hover {
         cursor: pointer;
@@ -30,7 +30,7 @@
     width: 246px;
     margin-top: 200px;
     margin-left: 10px;
-    color: $color-text;
+    color: $text-color;
     text-shadow: 1px 1px 2px grey;
     &:hover {
         text-shadow: none;

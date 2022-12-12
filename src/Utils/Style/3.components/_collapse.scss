@@ -1,14 +1,16 @@
 .collapse-element {
-    background-color: $color-primary;
+    background-color: $primary-color;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 5px 20px;
     border-radius: 5px;
+    z-index: 10;
+    position: relative;
 }
 
 .collapse-title {
-    color:$color-text;
+    color:$text-color;
 }
 
 .collapse-text {
@@ -42,31 +44,41 @@
 }
 
 .slidedown {
-    animation: slidedown 0.7s ;
+    animation: slidedown 0.7s forwards;
+    overflow: hidden;
 }
 
 .slideup {
-    animation: slideup 0.7s;
+    animation: slideup 0.7s forwards;
+    overflow: hidden;
 }
 
 @keyframes slidedown {
     from {
+        max-height: 0px;
         opacity: 0;
         transform:translateY(-50px);
+        padding: 0 20px;
     }
     to {
+        max-height: 100px;
         opacity:1;
         transform:translateY(0px);
+        padding: 20px;
     }
 }
 
 @keyframes slideup {
     from {
+        max-height: 100px;
         opacity:1;
         transform:translateY(0px);
+        padding: 20px;
     } to {
         opacity: 0;
         transform:translateY(-50px);
+        max-height: 0px;
+        padding: 0 20px;
     }
 
 }

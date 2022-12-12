@@ -8,11 +8,11 @@ function CollapseItem ({title, text, index}) {
         <div className="collapse" key={index}>
             <div className={"collapse-element " + (isOpen ? 'open' : 'close')}>
                 <h1 className="collapse-title">{title}</h1>
-                <button className="collapse-btn" onClick={() => setIsOpen(!isOpen)}>
+                <button className="arrow-btn" onClick={() => setIsOpen(!isOpen)}>
                     <img src={arrow} alt="flèche de navigation" className="collapse-img"/>
                 </button>
             </div>
-            {isOpen && <p className="collapse-text slidedown">{text}</p>}
+            <p className={"collapse-text  " + (isOpen ? 'slidedown' : 'slideup' )}>{text}</p>
         </div>
     );
     

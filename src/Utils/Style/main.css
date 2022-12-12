@@ -110,6 +110,8 @@ nav {
   justify-content: space-between;
   padding: 5px 20px;
   border-radius: 5px;
+  z-index: 10;
+  position: relative;
 }
 
 .collapse-title {
@@ -143,54 +145,72 @@ nav {
 }
 
 .slidedown {
-  -webkit-animation: slidedown 0.7s;
-          animation: slidedown 0.7s;
+  -webkit-animation: slidedown 0.7s forwards;
+          animation: slidedown 0.7s forwards;
+  overflow: hidden;
 }
 
 .slideup {
-  -webkit-animation: slideup 0.7s;
-          animation: slideup 0.7s;
+  -webkit-animation: slideup 0.7s forwards;
+          animation: slideup 0.7s forwards;
+  overflow: hidden;
 }
 
 @-webkit-keyframes slidedown {
   from {
+    max-height: 0px;
     opacity: 0;
     transform: translateY(-50px);
+    padding: 0 20px;
   }
   to {
+    max-height: 100px;
     opacity: 1;
     transform: translateY(0px);
+    padding: 20px;
   }
 }
 
 @keyframes slidedown {
   from {
+    max-height: 0px;
     opacity: 0;
     transform: translateY(-50px);
+    padding: 0 20px;
   }
   to {
+    max-height: 100px;
     opacity: 1;
     transform: translateY(0px);
+    padding: 20px;
   }
 }
 @-webkit-keyframes slideup {
   from {
+    max-height: 100px;
     opacity: 1;
     transform: translateY(0px);
+    padding: 20px;
   }
   to {
     opacity: 0;
     transform: translateY(-50px);
+    max-height: 0px;
+    padding: 0 20px;
   }
 }
 @keyframes slideup {
   from {
+    max-height: 100px;
     opacity: 1;
     transform: translateY(0px);
+    padding: 20px;
   }
   to {
     opacity: 0;
     transform: translateY(-50px);
+    max-height: 0px;
+    padding: 0 20px;
   }
 }
 .error-element {
@@ -201,6 +221,38 @@ nav {
 
 .error-link {
   margin: 150px 0px;
+}
+
+.slider-content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.slider-content img {
+  height: 50px;
+}
+
+.left {
+  transform: rotate(90deg);
+}
+
+.right {
+  transform: rotate(-90deg);
+}
+
+.pagination {
+  align-self: flex-end;
+  color: white;
+  padding-bottom: 20px;
+}
+
+.arrow-btn {
+  border: transparent;
+  background: transparent;
+  cursor: pointer;
 }
 
 .pink_logo {
@@ -276,6 +328,13 @@ nav a:hover {
   align-items: center;
   justify-content: space-around;
   padding: 60px 0px 30px 0px;
+}
+
+.slider-container {
+  background-color: red;
+  width: 100%;
+  height: 400px;
+  border-radius: 25px;
 }
 
 .footer-title {
