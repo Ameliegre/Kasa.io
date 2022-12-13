@@ -1,21 +1,30 @@
-.slider-content {
+.slider-wrapper {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    img {
-        height: 50px;
-    }
+    position: absolute;
+    top: 0;
 }
 
+.slider-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+
 .left {
-        transform: rotate(90deg);
+    transform: rotate(90deg);
+    z-index: 1;
 }
 
 .right {
     transform: rotate(-90deg);
+    z-index: 1;
 }
 
 .pagination {
