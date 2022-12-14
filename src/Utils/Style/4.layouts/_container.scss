@@ -62,3 +62,17 @@
     position: relative;
 }
 
+.lodging-text-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.tags-container{
+    display: flex;
+    flex-direction: row;
+}
+
+

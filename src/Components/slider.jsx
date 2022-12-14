@@ -25,7 +25,7 @@ function Slider () {
                 <button  className={"arrow-btn left " + (currentlodge.pictures.length === 1 ? 'hidden' : '')} onClick={(prevImage)}> 
                     <img src={arrow} alt="flèche de navigation"/>
                 </button>
-                <div className="pagination">{currentImageIndex + 1}/{currentlodge.pictures.length}</div>
+                <div className={"pagination " + (currentlodge.pictures.length === 1 ? 'hidden' : '')}>{currentImageIndex + 1}/{currentlodge.pictures.length}</div>
                 <button className={"arrow-btn right " + (currentlodge.pictures.length === 1 ? 'hidden' : '')} onClick={(nextImage)}>
                     <img src={arrow} alt="flèche de navigation"/>
                 </button>
