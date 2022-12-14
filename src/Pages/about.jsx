@@ -1,8 +1,13 @@
 import Banner from '../Components/banner'
 import mountBanner from '../Assets/big-mountain.png'
 import Collapse from '../Components/collapse'
+import { useEffect } from 'react'
 
 function About () {
+
+    useEffect(() =>{
+        document.title = 'Kasa - A Propos';
+    })
 
     return (
         <div className="page-container">

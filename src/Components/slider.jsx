@@ -17,18 +17,16 @@ function Slider () {
     {
         setCurrentImageIndex(currentImageIndex === currentlodge.pictures.length - 1 ? 0 : currentImageIndex + 1)
     }
-    
-
 
     return (
         <div className='slider-container'>
             <img src={currentlodge.pictures[currentImageIndex]} className='slider-img' alt="carrousel"/>
             <div className="slider-wrapper">
-                <button  className="arrow-btn left" onClick={(prevImage)}> 
+                <button  className={"arrow-btn left " + (currentlodge.pictures.length === 1 ? 'hidden' : '')} onClick={(prevImage)}> 
                     <img src={arrow} alt="flèche de navigation"/>
                 </button>
                 <div className="pagination">{currentImageIndex + 1}/{currentlodge.pictures.length}</div>
-                <button className="arrow-btn right" onClick={(nextImage)}>
+                <button className={"arrow-btn right " + (currentlodge.pictures.length === 1 ? 'hidden' : '')} onClick={(nextImage)}>
                     <img src={arrow} alt="flèche de navigation"/>
                 </button>
             </div>

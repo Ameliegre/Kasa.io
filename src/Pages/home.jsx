@@ -1,8 +1,14 @@
 import Banner from '../Components/banner'
 import seeBanner from '../Assets/big-see.png'
 import Card from '../Components/card'
+import { useEffect } from 'react'
 
 function Home () {
+
+    useEffect(() =>{
+        document.title = 'Kasa - Accueil';
+    })
+
     return (
         <div className='page-container'>
             <Banner>

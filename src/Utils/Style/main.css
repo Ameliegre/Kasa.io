@@ -244,18 +244,26 @@ nav {
 
 .left {
   transform: rotate(90deg);
-  z-index: 1;
+}
+.left img {
+  height: 50px;
 }
 
 .right {
   transform: rotate(-90deg);
-  z-index: 1;
+}
+.right img {
+  height: 50px;
 }
 
 .pagination {
   align-self: flex-end;
   color: white;
   padding-bottom: 20px;
+}
+
+.hidden {
+  display: none;
 }
 
 .arrow-btn {

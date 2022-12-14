@@ -19,16 +19,24 @@
 
 .left {
     transform: rotate(90deg);
-    z-index: 1;
+    img{
+        height: 50px;
+    }
 }
 
 .right {
     transform: rotate(-90deg);
-    z-index: 1;
+    img{
+        height: 50px;
+    }
 }
 
 .pagination {
     align-self: flex-end;
     color : $text-color;
     padding-bottom: 20px;
+}
+
+.hidden {
+    display: none;
 }
