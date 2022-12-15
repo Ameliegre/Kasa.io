@@ -10,9 +10,10 @@ function LodgingForm () {
 
     const {id} = useParams()
     const currentlodge = lodging.find(item => item.id === id);
+    const ratingNumber = parseInt(currentlodge.rating)
 
     useEffect(() =>{
-        document.title = 'Kasa - Logements';
+        document.title = '🛖 Logement';
     })
 
     return (
@@ -30,7 +31,7 @@ function LodgingForm () {
             </div>
             <div className='lodging-wrapper-component'>
                 <Tag/>
-                <Rating/>
+                <Rating scaleValue={ratingNumber}/>
             </div>
             <div className='collapse-container-lodging'>
                 <CollapseItem title="Description" text={currentlodge.description}/>

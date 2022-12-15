@@ -6,7 +6,7 @@ import { useEffect } from 'react'
 function About () {
 
     useEffect(() =>{
-        document.title = 'Kasa - A Propos';
+        document.title = '🛖 A Propos';
     })
 
     return (

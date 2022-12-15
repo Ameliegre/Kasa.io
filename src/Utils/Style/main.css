@@ -442,6 +442,7 @@ nav a:hover {
   flex-direction: row;
   justify-content: space-between;
   margin-top: 2%;
+  align-items: center;
 }
 
 .tags-element {
@@ -454,4 +455,8 @@ nav a:hover {
 
 .equipments {
   color: green;
+}
+
+.rating {
+  margin-left: 10px;
 }/*# sourceMappingURL=main.css.map */
