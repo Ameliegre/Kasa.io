@@ -29,6 +29,11 @@ nav {
   font-size: 24px;
 }
 
+.lodging {
+  font-weight: 400;
+  font-size: 20px;
+}
+
 .collapse-text {
   font-weight: 400;
 }
@@ -60,6 +65,10 @@ nav {
 }
 
 .lodging-profile p {
+  font-weight: 400;
+}
+
+li {
   font-weight: 400;
 }
 
@@ -139,6 +148,11 @@ nav {
   text-align: left;
   background-color: #F6F6F6;
   border-radius: 5px;
+  height: 70%;
+}
+
+ul {
+  list-style-type: none;
 }
 
 .collapse-btn {
@@ -180,7 +194,7 @@ nav {
     padding: 0 20px;
   }
   to {
-    max-height: 300px;
+    max-height: 150px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -195,7 +209,7 @@ nav {
     padding: 0 20px;
   }
   to {
-    max-height: 300px;
+    max-height: 150px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -203,7 +217,7 @@ nav {
 }
 @-webkit-keyframes slideup {
   from {
-    max-height: 300px;
+    max-height: 150px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -217,7 +231,7 @@ nav {
 }
 @keyframes slideup {
   from {
-    max-height: 300px;
+    max-height: 150px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
