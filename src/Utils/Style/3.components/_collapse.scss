@@ -61,7 +61,7 @@
         padding: 0 20px;
     }
     to {
-        max-height: 100px;
+        max-height: 300px;
         opacity:1;
         transform:translateY(0px);
         padding: 20px;
@@ -70,7 +70,7 @@
 
 @keyframes slideup {
     from {
-        max-height: 100px;
+        max-height: 300px;
         opacity:1;
         transform:translateY(0px);
         padding: 20px;

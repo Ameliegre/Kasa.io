@@ -75,4 +75,16 @@
     flex-direction: row;
 }
 
+.collapse-container-lodging{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: 6%;
+    margin-top: 2%;
+    .collapse{
+        font-weight: 400;
+        flex:1;
+
+    }
+}
 

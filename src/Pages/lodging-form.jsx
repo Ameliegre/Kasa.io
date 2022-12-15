@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import lodging from "../Datas/logements.json"
 import Tag from "../Components/tag"
 import Rating from '../Components/rating'
+import CollapseItem from '../Components/collapseItem'
 
 function LodgingForm () {
 
@@ -16,7 +17,7 @@ function LodgingForm () {
 
     return (
         <div className='page-container'>
-            <Slider></Slider>
+            <Slider/>
             <div className='lodging-text-container'>
                 <div className='lodging-text'>
                     <h1>{currentlodge.title}</h1>
@@ -28,8 +29,12 @@ function LodgingForm () {
                 </div>
             </div>
             <div className='lodging-wrapper-component'>
-                <Tag></Tag>
-                <Rating></Rating>
+                <Tag/>
+                <Rating/>
+            </div>
+            <div className='collapse-container-lodging'>
+                <CollapseItem title="Description" text={currentlodge.description}/>
+                <CollapseItem title="Équipements" text={currentlodge.equipments}/>
             </div>
         </div>
     )

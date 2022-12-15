@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Overpass:wght@400;700&display=swap");
 * {
   color: #FF6060;
-  box-sizing: border-box;
   margin: 0;
 }
 
@@ -52,10 +51,16 @@ nav {
 }
 .lodging-text h2 {
   font-size: 18px;
+  font-weight: 400;
 }
 
 .tags-element {
   font-size: 14px;
+  font-weight: 400;
+}
+
+.lodging-profile p {
+  font-weight: 400;
 }
 
 .img-Banner {
@@ -175,7 +180,7 @@ nav {
     padding: 0 20px;
   }
   to {
-    max-height: 100px;
+    max-height: 300px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -190,7 +195,7 @@ nav {
     padding: 0 20px;
   }
   to {
-    max-height: 100px;
+    max-height: 300px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -198,7 +203,7 @@ nav {
 }
 @-webkit-keyframes slideup {
   from {
-    max-height: 100px;
+    max-height: 300px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -212,7 +217,7 @@ nav {
 }
 @keyframes slideup {
   from {
-    max-height: 100px;
+    max-height: 300px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -378,6 +383,19 @@ nav a:hover {
   flex-direction: row;
 }
 
+.collapse-container-lodging {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  -moz-column-gap: 6%;
+       column-gap: 6%;
+  margin-top: 2%;
+}
+.collapse-container-lodging .collapse {
+  font-weight: 400;
+  flex: 1;
+}
+
 .footer-title {
   color: white;
   padding-top: 34px;
@@ -418,4 +436,8 @@ nav a:hover {
   margin-right: 10px;
   padding: 5px 30px;
   border-radius: 12px;
+}
+
+.equipments {
+  color: green;
 }/*# sourceMappingURL=main.css.map */

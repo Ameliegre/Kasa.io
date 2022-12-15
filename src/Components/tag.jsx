@@ -8,7 +8,7 @@ function Tag () {
     
     return (
         <div className="tags-container">
-            {currentlodge.tags.map(tag => <div className="tags-element" key={tag}>{tag}</div>)}
+            {currentlodge.tags.map((tag,index) => <div className="tags-element" key={index}>{tag}</div>)}
         </div>
     )
 }
