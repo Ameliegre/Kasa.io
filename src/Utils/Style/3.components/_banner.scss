@@ -3,11 +3,18 @@
     margin: 0;
     object-fit: cover;
     border-radius: 25px;
-    filter : contrast(80%)
+    filter : contrast(80%);
+    @include mobile-only {
+        border-radius: 10px;
+        height: 150px;
+    }
 }
 
 .banner-title {
     position: absolute;
     bottom: 50px;
     color:$text-color;
+    @include mobile-only {
+        font-size:24px;
+    }
 }

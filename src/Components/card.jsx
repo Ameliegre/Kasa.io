@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom'
-import lodgingList  from '../Datas/logements.json'
+import lodgingList from '../Datas/logements.json'
 
 function Card () {
 
@@ -14,7 +14,7 @@ function Card () {
                     </NavLink>
                 ))}
         </div>
-)
+    )
 }
 
 export default Card

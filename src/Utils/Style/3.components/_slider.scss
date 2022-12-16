@@ -21,13 +21,20 @@
     transform: rotate(90deg);
     img{
         height: 50px;
+        @include mobile-only {
+            height: 14px;
+        }
     }
+    
 }
 
 .right {
     transform: rotate(-90deg);
     img{
         height: 50px;
+        @include mobile-only {
+            height: 14px;
+        }
     }
 }
 
@@ -35,6 +42,9 @@
     align-self: flex-end;
     color : $text-color;
     padding-bottom: 20px;
+    @include mobile-only {
+        display: none;
+    }
 }
 
 .hidden {

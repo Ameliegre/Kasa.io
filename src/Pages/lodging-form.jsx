@@ -1,20 +1,26 @@
 import { useEffect } from 'react'
 import Slider from '../Components/slider'
-import { useParams } from 'react-router-dom'
+import { useParams, Navigate } from 'react-router-dom'
 import lodging from "../Datas/logements.json"
 import Tag from "../Components/tag"
 import Rating from '../Components/rating'
 import CollapseItem from '../Components/collapseItem'
 
+
+
 function LodgingForm () {
+
+    useEffect(() => {
+        document.title = '🛖 Logement';
+    })
 
     const {id} = useParams()
     const currentlodge = lodging.find(item => item.id === id);
-    const ratingNumber = parseInt(currentlodge.rating)
+    if (!currentlodge) {
+        return <Navigate to="/404" />
+    }
 
-    useEffect(() =>{
-        document.title = '🛖 Logement';
-    })
+    const ratingNumber = parseInt(currentlodge.rating)
 
     return (
         <div className='page-container'>

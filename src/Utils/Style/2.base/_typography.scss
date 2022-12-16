@@ -37,10 +37,16 @@ nav {
 .error-figures {
     font-size: 200px;
     font-weight: 700;
+    @include mobile-only {
+        font-size: 100px;
+    }
 }
 
 .error-text {
-    font-size: 25px
+    font-size: 25px;
+    @include mobile-only {
+        font-size: 18px;
+    }
 }
 
 .error-link {

@@ -38,6 +38,9 @@
     height: auto;
     margin-top:2%;
     border-radius: 5px;
+    @include mobile-only {
+        width: 100%;
+    }
 }
 
 .error-container {
@@ -60,6 +63,10 @@
     height: 400px;
     border-radius: 25px;
     position: relative;
+    @include mobile-only {
+        height: 300px;
+        border-radius: 10px;
+    }
 }
 
 .lodging-text-container {
@@ -84,7 +91,12 @@
     .collapse{
         font-weight: 400;
         flex:1;
-
+    }
+    @include mobile-only {
+        flex-direction: column;
+    }
+    @include tablet-only {
+        flex-direction: column;
     }
 }
 

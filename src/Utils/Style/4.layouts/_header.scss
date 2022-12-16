@@ -1,5 +1,8 @@
 .pink_logo {
     margin-left:0%;
+    @include mobile-only {
+        height: 40px;
+    }
 }
 
 nav {
@@ -14,4 +17,8 @@ nav {
             border-bottom: $primary-color solid 2px;
         }
     } 
+    @include mobile-only {
+        font-size: 12px;
+        margin-left: 0px;
+    }
 }
