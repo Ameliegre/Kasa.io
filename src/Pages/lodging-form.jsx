@@ -29,15 +29,15 @@ function LodgingForm () {
                 <div className='lodging-text'>
                     <h1>{currentlodge.title}</h1>
                     <h2>{currentlodge.location}</h2>
+                    <Tag/>
                 </div>
-                <div className='lodging-profile'>
-                    <p>{currentlodge.host.name}</p>
-                    <img src={currentlodge.host.picture} alt="profil du propriétaire"/>
+                <div className='lodging-wrapper'>
+                    <div className='lodging-profile'>
+                            <p>{currentlodge.host.name}</p>
+                            <img src={currentlodge.host.picture} alt="profil du propriétaire"/>
+                    </div>
+                    <Rating scaleValue={ratingNumber}/>
                 </div>
-            </div>
-            <div className='lodging-wrapper-component'>
-                <Tag/>
-                <Rating scaleValue={ratingNumber}/>
             </div>
             <div className='collapse-container-lodging'>
                 <CollapseItem title="Description" text={currentlodge.description}/>

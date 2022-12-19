@@ -78,11 +78,15 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 2%;
+    @include mobile-only {
+        flex-direction: column;
+    }
 }
 
 .tags-container{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .collapse-container-lodging {
