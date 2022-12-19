@@ -41,6 +41,9 @@
     @include mobile-only {
         width: 100%;
     }
+    @include tablet-only {
+        width: 100%;
+    }
 }
 
 .error-container {

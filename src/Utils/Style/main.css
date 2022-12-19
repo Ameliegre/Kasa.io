@@ -47,6 +47,11 @@ nav {
     font-size: 100px;
   }
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .error-figures {
+    font-size: 100px;
+  }
+}
 
 .error-text {
   font-size: 25px;
@@ -96,6 +101,12 @@ li {
     height: 150px;
   }
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .img-Banner {
+    border-radius: 10px;
+    height: 150px;
+  }
+}
 
 .banner-title {
   position: absolute;
@@ -105,6 +116,14 @@ li {
 @media screen and (max-width: 425px) {
   .banner-title {
     font-size: 24px;
+    left: 20px;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .banner-title {
+    font-size: 30px;
+    left: 20px;
+    bottom: 50px;
   }
 }
 
@@ -120,6 +139,18 @@ li {
   cursor: pointer;
   transition: all 0.2s ease-out;
   box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366);
+}
+@media screen and (max-width: 425px) {
+  .card-element {
+    width: 96%;
+    height: 248px;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .card-element {
+    width: 342px;
+    height: 248px;
+  }
 }
 
 .card-img {
@@ -147,6 +178,16 @@ li {
 .card-title:hover {
   text-shadow: none;
   opacity: 1;
+}
+@media screen and (max-width: 425px) {
+  .card-title {
+    margin-top: 192px;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .card-title {
+    margin-top: 192px;
+  }
 }
 
 .collapse-element {
@@ -215,7 +256,7 @@ ul {
     padding: 0 20px;
   }
   to {
-    max-height: 150px;
+    max-height: 250px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -230,7 +271,7 @@ ul {
     padding: 0 20px;
   }
   to {
-    max-height: 150px;
+    max-height: 250px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -238,7 +279,7 @@ ul {
 }
 @-webkit-keyframes slideup {
   from {
-    max-height: 150px;
+    max-height: 250px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -252,7 +293,7 @@ ul {
 }
 @keyframes slideup {
   from {
-    max-height: 150px;
+    max-height: 250px;
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
@@ -273,9 +314,11 @@ ul {
 @media screen and (max-width: 425px) {
   .error-element {
     margin-top: 100px;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .error-element {
+    margin-top: 100px;
   }
 }
 
@@ -285,6 +328,22 @@ ul {
 @media screen and (max-width: 425px) {
   .error-link {
     margin: 100px 0;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .error-link {
+    margin: 100px 0;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .error-text {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .error-text {
+    text-align: center;
   }
 }
 
@@ -360,6 +419,11 @@ ul {
     height: 40px;
   }
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .pink_logo {
+    height: 50px;
+  }
+}
 
 nav {
   display: flex;
@@ -377,6 +441,12 @@ nav a:hover {
 @media screen and (max-width: 425px) {
   nav {
     font-size: 12px;
+    margin-left: 0px;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  nav {
+    font-size: 16px;
     margin-left: 0px;
   }
 }
@@ -423,6 +493,11 @@ nav a:hover {
   border-radius: 5px;
 }
 @media screen and (max-width: 425px) {
+  .collapse-container {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
   .collapse-container {
     width: 100%;
   }
@@ -502,6 +577,12 @@ nav a:hover {
     font-size: 12px;
   }
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .footer-title {
+    padding-bottom: 30px;
+    font-size: 12px;
+  }
+}
 
 .white_logo {
   height: 30px;
@@ -532,6 +613,11 @@ nav a:hover {
   margin-top: 2%;
   align-items: center;
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .lodging-wrapper-component {
+    flex-wrap: wrap;
+  }
+}
 
 .tags-element {
   color: white;
@@ -545,6 +631,11 @@ nav a:hover {
   color: green;
 }
 
-.rating {
+.rating-list .rating {
   margin-left: 10px;
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .rating-list {
+    margin-top: 10px;
+  }
 }/*# sourceMappingURL=main.css.map */

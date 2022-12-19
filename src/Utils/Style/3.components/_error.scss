@@ -5,7 +5,9 @@
     align-items: center;
     @include mobile-only {
         margin-top: 100px;
-        width: max-content;
+    }
+    @include tablet-only {
+        margin-top: 100px;
     }
 }
 
@@ -14,5 +16,16 @@
     @include mobile-only {
         margin: 100px 0;
     }
+    @include tablet-only {
+        margin: 100px 0;
+    }
 }
 
+.error-text {
+    @include mobile-only {
+        text-align: center;
+    }
+    @include tablet-only {
+        text-align: center;
+    }
+}

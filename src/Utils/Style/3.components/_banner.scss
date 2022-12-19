@@ -8,6 +8,10 @@
         border-radius: 10px;
         height: 150px;
     }
+    @include tablet-only {
+        border-radius: 10px;
+        height: 150px;
+    }
 }
 
 .banner-title {
@@ -16,5 +20,11 @@
     color:$text-color;
     @include mobile-only {
         font-size:24px;
+        left :20px;
+    }
+    @include tablet-only {
+        font-size: 30px;
+        left: 20px;
+        bottom: 50px;
     }
 }

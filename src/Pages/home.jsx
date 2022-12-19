@@ -1,5 +1,6 @@
 import Banner from '../Components/banner'
-import seeBanner from '../Assets/big-see.png'
+import seeBannerXL from '../Assets/big-see.png'
+import seeBannerS from '../Assets/small-see.png'
 import Card from '../Components/card'
 import { useEffect } from 'react'
 
@@ -12,8 +13,8 @@ function Home () {
     return (
         <div className='page-container'>
             <Banner>
-                <img src={seeBanner} alt ='bannière mer' className='img-Banner'/>
-                <h1 className='banner-title'>Chez vous, partout et ailleurs</h1>
+                <img srcSet={`${seeBannerS} 425w, ${seeBannerXL}, 426w`} alt ='bannière mer' className='img-Banner'/>
+                <h1 className='banner-title'>Chez vous,{window.innerWidth < 426 && <br/> } partout et ailleurs</h1>
             </Banner>
             <Card></Card>
         </div>

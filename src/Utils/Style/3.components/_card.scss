@@ -10,6 +10,14 @@
         transition: all 0.2s ease-out;
         box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366); 
     }
+    @include mobile-only {
+        width: 96%;
+        height: 248px;
+    }
+    @include tablet-only {
+        width: 342px;
+        height: 248px;
+    }
 }
 
 .card-img {
@@ -35,5 +43,11 @@
     &:hover {
         text-shadow: none;
         opacity: 1;
+    }
+    @include mobile-only {
+        margin-top: 192px;
+    }
+    @include tablet-only {
+        margin-top: 192px;
     }
 }

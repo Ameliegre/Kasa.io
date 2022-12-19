@@ -40,6 +40,9 @@ nav {
     @include mobile-only {
         font-size: 100px;
     }
+    @include tablet-only {
+        font-size: 100px;
+    }
 }
 
 .error-text {
