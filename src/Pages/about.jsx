@@ -13,7 +13,11 @@ function About () {
     return (
         <div className="page-container">
             <Banner>
-                <img srcSet={`${mountBannerS} 425w, ${mountBannerXL}, 426w`} alt ='bannière montagne' className='img-Banner'/>
+            <picture>
+                    <source srcSet={mountBannerS} media="(max-width: 425px)"/>
+                    <source srcSet={mountBannerXL}/>
+                    <img src={mountBannerXL} alt ='bannière montagn' className='img-Banner'/>
+            </picture>
             </Banner>
             <Collapse></Collapse>
         </div>
