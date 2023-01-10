@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Login from './Pages/login'
+import Signin from './Pages/signin'
 import Home from './Pages/home'
 import Error from './Components/error'
 import About from './Pages/about'
@@ -14,15 +15,16 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      {window.location.pathname !== '/' && <Header /> }
+      <Header/>
       <Routes>
-        <Route exact path='/' element={<Login/>}/>
+        <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/signin' element={<Signin/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/lodging-form/:id" element={<LodgingForm/>}/>
         <Route path="*" element={<Error/>}/>
       </Routes>
-      {window.location.pathname !== '/' && <Footer /> }
+      <Footer />
     </React.StrictMode>
   </BrowserRouter>
 );
