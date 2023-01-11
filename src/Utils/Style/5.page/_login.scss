@@ -7,6 +7,7 @@
     padding: 0px 20px;
     border-radius: 4px;
     box-shadow: 5px 5px 10px grey;
+    color:unset;
     .input-title {
         width: 100%;
         padding-top: 10px;
@@ -27,6 +28,7 @@
         width: 98%;
         padding: 5px;
         border: 1px solid #F2F2F2;
+        color:black;
     }
 }
 
@@ -42,7 +44,7 @@
     color: black;
 }
 
-.signin {
+.link {
     padding-top: 18px;
     font-size: 12px;
     color: black;
@@ -58,8 +60,9 @@
     bottom: -10px;
 }
 
-.instructions > svg {
+.instructions  svg {
     margin-right: 0.25rem;
+    color: #fff;
 }
 
 .offscreen {
@@ -70,6 +73,7 @@
 .hide {
     display: none;
 }
+
 
 .valid {
     color: limegreen;

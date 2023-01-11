@@ -3,12 +3,12 @@ import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pink_logo from '../Assets/logo-pink.svg'
 
-const USER_REGEX = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
-const PWD_REGEX = /^[a-zA-Z][a-zA-Z0-9-_]{8,23}$/;
+const USER_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function Signin () {
     const userRef = useRef();
-    const errRef = useRef();
+
 
     const [user, setUser] = useState('')
     const [validUser, setValidUser] = useState(false);
@@ -30,7 +30,7 @@ function Signin () {
         userRef.current.focus();
     }, [])
 
-    //validation du username
+    //validation du username avec les conditions REGEX
     useEffect(() => {
         const result = USER_REGEX.test(user);
         console.log(result);
@@ -38,7 +38,7 @@ function Signin () {
         setValidUser(result);
     }, [user])
 
-    //validation du pwd
+    //validation du pwd avec les conditions REGEX
     useEffect(() => {
         const result = PWD_REGEX.test(pwd);
         console.log(result);
@@ -53,10 +53,17 @@ function Signin () {
         setErrMsg('');
     }, [user, pwd, matchPwd])
 
-
+    //Permet de soumettre le formulaire avec une double validation des conditions REGEX
     const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(user)
+        e.preventDefault()
+        const v1 = USER_REGEX.test(user);
+        const v2 = PWD_REGEX.test(pwd);
+        if(!v1 || !v2) {
+            setErrMsg("Entrée invalide");
+            return;
+        }
+        console.log(user,pwd);
+        setSuccess(true);
     }
 
     return (
@@ -90,13 +97,64 @@ function Signin () {
                     <FontAwesomeIcon icon={faInfoCircle}/>
                     Doit contenir un @.<br/>
                 </p>
-                <label htmlFor="pwd" className='input-title'>Mot de passe :</label>
-                <input value={pwd} onChange={(e) => setPwd(e.target.value)} type="password" placeholder='Tape ton mot de passe'></input>
-                <label htmlFor="" className='input-title'>Confirmer votre mot de passe :</label>
-                <input value={pwd} onChange={(e) => setPwd(e.target.value)} type="password" placeholder='Tape ton mot de passe'></input>
-                <button className='log-btn'>S'inscrire</button>
-            </form>
-            <p className='signin'>Déjà inscrit ? c'est par <a href='/login'>ici</a></p>
+                <label htmlFor="password" className='input-title'>
+                    Mot de passe :
+                    <span className={validPwd ? "valid" : "hide"}>
+                        <FontAwesomeIcon icon={faCheck}/>
+                    </span>
+                    <span className={validPwd || !pwd ? "hide" : "invalid"}>
+                        <FontAwesomeIcon icon={faTimes}/>
+                    </span>
+                </label>
+                <input 
+                    type="password" 
+                    id="password" 
+                    onChange={(e) => setPwd(e.target.value)} 
+                    required
+                    aria-invalid={validPwd ? "false" : "true"}
+                    aria-describedby="pwdnote"
+                    onFocus={() => setPwdFocus(true)}
+                    onBlur={() => setPwdFocus(false)}
+                    placeholder='Tape ton mot de passe'>
+                </input>
+                <p id="pwdnote" className={pwdFocus && !validPwd ? "instructions" : "offscreen"}>
+                    <FontAwesomeIcon icon={faInfoCircle}/>
+                    8 à 23 caractères.<br/>
+                    Doit inclure une lettre majuscule et une minuscule, un chiffre et un caractère spécial.<br />
+                    Caractères spéciaux autorisés: 
+                        <span aria-label="exclamation mark"> !</span> 
+                        <span aria-label="at symbol"> @</span> 
+                        <span aria-label="hashtag"> #</span> 
+                        <span aria-label="dollar sign"> $</span> 
+                        <span aria-label="percent"> %</span>
+                </p>
+                <label htmlFor="confirm_pwd" className='input-title'>
+                    Confirmation du mot de passe :
+                    <span className={validMatch && matchPwd ? "valid" : "hide"}>
+                        <FontAwesomeIcon icon={faCheck}/>
+                    </span>
+                    <span className={validMatch|| !matchPwd ? "hide" : "invalid"}>
+                        <FontAwesomeIcon icon={faTimes}/>
+                    </span>
+                </label>
+                <input 
+                    type="password" 
+                    id="confirm_pwd" 
+                    onChange={(e) => setMatchPwd(e.target.value)} 
+                    required
+                    aria-invalid={validMatch ? "false" : "true"}
+                    aria-describedby="confirmnote"
+                    onFocus={() => setMatchFocus(true)}
+                    onBlur={() => setMatchFocus(false)}
+                    placeholder='Tape ton mot de passe à nouveau'>
+                </input>
+                <p id="confirmnote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                    <FontAwesomeIcon icon={faInfoCircle}/>
+                    Doit correspondre au mot de passe inscrit précédement.
+                </p>
+                <button type="button" className='log-btn' >S'inscrire</button>
+            </form> 
+            <p className='link'>Déjà inscrit ? c'est par <a href='/login'>ici</a></p>
         </div>
     )
 }
