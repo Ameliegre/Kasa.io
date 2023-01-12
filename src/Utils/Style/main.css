@@ -748,20 +748,26 @@ nav a:hover {
   color: black;
 }
 .login-wrapper .log-btn {
-  width: 100%;
+  width: 30%;
   margin-top: 20px;
-  padding: 5px 0px;
+  padding: 12px 0px;
   border-color: transparent;
-  color: white;
   background-color: #FF6060;
   border-radius: 6px;
   margin-bottom: 20px;
+}
+.login-wrapper .log-btn span {
+  color: white;
 }
 .login-wrapper input {
   width: 98%;
   padding: 5px;
   border: 1px solid #F2F2F2;
   color: black;
+}
+
+.log-btn[disabled] {
+  background-color: grey;
 }
 
 .pink_logo.log {
@@ -794,7 +800,12 @@ nav a:hover {
 
 .instructions svg {
   margin-right: 0.25rem;
-  color: #fff;
+}
+.instructions path {
+  fill: white;
+}
+.instructions span {
+  color: white;
 }
 
 .offscreen {
@@ -807,11 +818,15 @@ nav a:hover {
 }
 
 .valid {
-  color: limegreen;
   margin-left: 0.25rem;
+}
+.valid path {
+  fill: limegreen;
 }
 
 .invalid {
-  color: red;
   margin-left: 0.25rem;
+}
+.invalid path {
+  fill: red;
 }/*# sourceMappingURL=main.css.map */

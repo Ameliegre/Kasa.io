@@ -15,14 +15,16 @@
         color: black;
     }
     .log-btn {
-        width: 100%;
+        width: 30%;
         margin-top: 20px;
-        padding: 5px 0px;
+        padding: 12px 0px;
         border-color: transparent;
-        color: white;
         background-color: $primary-color;
         border-radius: 6px;
         margin-bottom: 20px;
+        & span {
+            color: white;
+        }
     }
     input {
         width: 98%;
@@ -30,6 +32,10 @@
         border: 1px solid #F2F2F2;
         color:black;
     }
+}
+
+.log-btn[disabled] {
+    background-color:grey;
 }
 
 .pink_logo.log{
@@ -60,9 +66,16 @@
     bottom: -10px;
 }
 
-.instructions  svg {
-    margin-right: 0.25rem;
-    color: #fff;
+.instructions {
+    & svg {
+        margin-right: 0.25rem;
+    }
+    & path {
+        fill:white;
+    }
+    & span {
+        color:white;
+    }
 }
 
 .offscreen {
@@ -74,13 +87,16 @@
     display: none;
 }
 
-
 .valid {
-    color: limegreen;
     margin-left: 0.25rem;
+    & path {
+        fill: limegreen;
+    }
 }
 
 .invalid {
-    color: red;
     margin-left: 0.25rem;
+    & path {
+        fill: red;
+    }
 }

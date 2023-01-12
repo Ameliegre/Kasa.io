@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
+import { faTimes, faInfoCircle, faRefresh, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pink_logo from '../Assets/logo-pink.svg'
 
@@ -8,7 +8,6 @@ const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 function Signin () {
     const userRef = useRef();
-
 
     const [user, setUser] = useState('')
     const [validUser, setValidUser] = useState(false);
@@ -54,7 +53,7 @@ function Signin () {
     }, [user, pwd, matchPwd])
 
     //Permet de soumettre le formulaire avec une double validation des conditions REGEX
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
@@ -152,9 +151,13 @@ function Signin () {
                     <FontAwesomeIcon icon={faInfoCircle}/>
                     Doit correspondre au mot de passe inscrit précédement.
                 </p>
-                <button type="button" className='log-btn' >S'inscrire</button>
+                <button type="button" className='log-btn' disabled={!validUser || !validPwd || !validMatch}>
+                    <span className="submit">S'inscrire</span>
+                    <span className="loading"><FontAwesomeIcon icon={faRefresh}/></span>
+	                <span className="check"><FontAwesomeIcon icon={faCheck}/></span>
+                </button>
             </form> 
-            <p className='link'>Déjà inscrit ? c'est par <a href='/login'>ici</a></p>
+            <p className='link'>Déjà inscrit ? alors par <a href='/login'>ici</a></p>
         </div>
     )
 }
