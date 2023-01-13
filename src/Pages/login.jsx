@@ -1,6 +1,4 @@
 import { useState, useRef, useEffect } from "react";
-import { faCheck, faTimes, faInfoCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontawesomeObject } from "@fortawesome/fontawesome-svg-core";
 import pink_logo from '../Assets/logo-pink.svg'
 
 
@@ -57,7 +55,9 @@ function Login () {
                     value={pwd}
                     required>
                 </input>
-                <button type="submit" className='log-btn'>Se connecter</button>
+                <button type="submit" className='log-btn' disabled={!user || !pwd }>
+                    <span>Se connecter</span>
+                </button>
             </form>
             <p className='link'>Pour créer un nouveau compte, c'est <a href='/signin'>ici</a></p>
         </div>
