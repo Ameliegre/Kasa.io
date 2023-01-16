@@ -1,10 +1,24 @@
 //Import des packages 
 const express = require('express');
-require('dotenv').config()
+require('dotenv').config();
+const mysql = require('mysql');
 
 //Import des routes
 
 //Connexion à la BDD SQL
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'Kasa',
+    port: 3306,
+})
+
+db.connect(function(err) {   
+    if (err) throw err;   
+    console.log("Connecté à la base de données MySQL!"); 
+});
+
 
 //Appel de la methode pour créer une application
 const app = express();
