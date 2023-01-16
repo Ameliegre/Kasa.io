@@ -19,7 +19,7 @@ root.render(
       <Routes>
         <Route exact path='/login' element={<Login/>}/>
         <Route exact path='/signin' element={<Signin/>}/>
-        <Route path="/home" element={<Home/>}/>
+        <Route path="/" element={<Home/>}/>
         <Route path="/about" element={<About/>}/>
         <Route path="/lodging-form/:id" element={<LodgingForm/>}/>
         <Route path="*" element={<Error/>}/>
