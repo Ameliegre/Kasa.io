@@ -9,9 +9,9 @@ const mysql = require('mysql');
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '',
+    password: 'root',
     database: 'Kasa',
-    port: 3306,
+    port: 3306
 })
 
 db.connect(function(err) {   
@@ -37,6 +37,11 @@ app.use((req, res, next) => {
 //Renvoi des routes vers le frontend
 app.get('/',(req,res) => {
     res.status(300).send('hello express') 
+    db.query('SELECT * FROM logements', (err, data, fields) => {
+        if (err) throw err
+      
+        console.log(data)
+    })
 });
 
 //export du fichier
