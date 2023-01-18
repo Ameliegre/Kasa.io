@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import pink_logo from '../Assets/logo-pink.svg'
 
+const LOGIN_URL ='/api/login';
 
 function Login () {
     const userRef = useRef();
@@ -21,6 +22,7 @@ function Login () {
         setErrMsg('');
     }, [user, pwd])
     
+    ////Permet de soumettre le formulaire vers le backend
     const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(user,pwd);
@@ -28,39 +30,51 @@ function Login () {
     }
 
     return (
-        <div className="login-container">
-            <img src={pink_logo} alt="logo Kasa rose" className='pink_logo log'/>
-            <form onSubmit={handleSubmit} className='login-wrapper'>
-                <h1 className='login-title'>Connexion</h1>
-                <label htmlFor="email" className='input-title'>
-                    Email :
-                </label>
-                <input 
-                    type="email"
-                    id='email'
-                    ref={userRef}
-                    autoComplete="off"
-                    onChange={(e) => setUser(e.target.value)} 
-                    value={user}
-                    required>
-                </input>
-                <label htmlFor="password" className='input-title'>
-                    Mot de passe :
-                </label>
-                <input 
-                    type="password" 
-                    id='password'
-                    autoComplete="off"
-                    onChange={(e) => setPwd(e.target.value)}
-                    value={pwd}
-                    required>
-                </input>
-                <button type="submit" className='log-btn' disabled={!user || !pwd }>
-                    <span>Se connecter</span>
-                </button>
-            </form>
-            <p className='link'>Pour créer un nouveau compte, c'est <a href='/signin'>ici</a></p>
-        </div>
+        <>
+            {success ? (
+                <section className="login-container">
+                    <h1>Connexion réalisée avec succès!</h1>
+                    <p>
+                        <a href='/home'>Accueil</a>
+                    </p>
+                </section>
+            ) : (
+                <div className="login-container">
+                    <img src={pink_logo} alt="logo Kasa rose" className='pink_logo log'/>
+                    <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
+                    <form onSubmit={handleSubmit} className='login-wrapper'>
+                        <h1 className='login-title'>Connexion</h1>
+                        <label htmlFor="email" className='input-title'>
+                            Email :
+                        </label>
+                        <input 
+                            type="email"
+                            id='email'
+                            ref={userRef}
+                            autoComplete="off"
+                            onChange={(e) => setUser(e.target.value)} 
+                            value={user}
+                            required>
+                        </input>
+                        <label htmlFor="password" className='input-title'>
+                            Mot de passe :
+                        </label>
+                        <input 
+                            type="password" 
+                            id='password'
+                            autoComplete="off"
+                            onChange={(e) => setPwd(e.target.value)}
+                            value={pwd}
+                            required>
+                        </input>
+                        <button className='log-btn' disabled={!user || !pwd }>
+                            <span>Se connecter</span>
+                        </button>
+                    </form>
+                    <p className='link'>Pour créer un nouveau compte, c'est <a href='/signin'>ici</a></p>
+                </div>
+            )}
+        </>
     )
 }
 

@@ -4,6 +4,7 @@ require('dotenv').config();
 const mysql = require('mysql');
 
 //Import des routes
+const userRoutes = require('./routes/user')
 
 //Connexion à la BDD SQL
 const db = mysql.createConnection({
@@ -21,8 +22,9 @@ db.connect(function(err) {
 
 
 //Appel de la methode pour créer une application
-const app = express();
 
+const app = express();
+app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 
 //Permet à l'application d'acceder à l'API
@@ -43,6 +45,8 @@ app.get('/',(req,res) => {
         console.log(data)
     })
 });
+
+app.use('/api', userRoutes);
 
 //export du fichier
 module.exports = app;
