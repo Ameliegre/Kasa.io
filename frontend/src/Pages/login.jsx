@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import pink_logo from '../Assets/logo-pink.svg'
+import axios from '../Api/axios'
 
 const LOGIN_URL ='/api/login';
 
@@ -25,8 +26,21 @@ function Login () {
     ////Permet de soumettre le formulaire vers le backend
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(user,pwd);
-        setSuccess(true);
+        try {
+            const response = await axios.post(LOGIN_URL,{
+                user: user,
+                password: pwd
+            });
+            console.log(response.data);
+            setUser('');
+            setPwd('');
+            setSuccess(true);
+        } catch (err) {
+            if (!err?.response) {
+                setErrMsg('Echec de la connexion');
+            }
+            errRef.current.focus();
+        }
     }
 
     return (

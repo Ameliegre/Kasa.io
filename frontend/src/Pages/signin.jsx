@@ -70,12 +70,8 @@ function Signin () {
             setSuccess(true);
         } catch (err) {
             if (!err?.response) {
-                setErrMsg('No Server Response');
-            } else if (err.response?.status === 409) {
-                setErrMsg('Username Taken');
-            } else {
-                setErrMsg('Registration Failed')
-            }
+                setErrMsg('Echec de l\'inscription');
+            } 
             errRef.current.focus();
         }
     }
