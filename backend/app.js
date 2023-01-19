@@ -1,28 +1,11 @@
 //Import des packages 
 const express = require('express');
 require('dotenv').config();
-const mysql = require('mysql');
 
 //Import des routes
 const userRoutes = require('./routes/user')
 
-//Connexion à la BDD SQL
-const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'root',
-    database: 'Kasa',
-    port: 3306
-})
-
-db.connect(function(err) {   
-    if (err) throw err;   
-    console.log("Connecté à la base de données MySQL!"); 
-});
-
-
 //Appel de la methode pour créer une application
-
 const app = express();
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
@@ -39,11 +22,6 @@ app.use((req, res, next) => {
 //Renvoi des routes vers le frontend
 app.get('/',(req,res) => {
     res.status(300).send('hello express') 
-    db.query('SELECT * FROM logements', (err, data, fields) => {
-        if (err) throw err
-      
-        console.log(data)
-    })
 });
 
 app.use('/api', userRoutes);
