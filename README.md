@@ -1,3 +1,15 @@
+Projet réalisé dans le cadre de la formation en ligne Developpeur Web chez Openclassrooms
+
+Type de projet : Créer une application web avec React
+
+Compétences évaluées :
+
+  - Initialiser une application avec Create React App
+  - Développer des éléments de l'interface d'un site web grâce à des composants React
+  - Configurer la navigation entre les pages de l'application avec React Router
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
