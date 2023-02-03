@@ -4,13 +4,22 @@ import { faTimes, faInfoCircle, faCheck } from "@fortawesome/free-solid-svg-icon
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import pink_logo from '../Assets/logo-pink.svg'
 
-const USER_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const NAME_REGEX = /^[A-z][A-z0-9-_]{2,23}$/;
+const EMAIL_REGEX = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 const SIGNIN_URL ='/api/signup';
 
 function Signin () {
     const userRef = useRef();
     const errRef = useRef();
+
+    const [name, setName] = useState('')
+    const [validName, setValidName] = useState(false);
+    const [nameFocus, setNameFocus] = useState(false);
+
+    const [surname, setSurname] = useState('')
+    const [validSurname, setValidSurname] = useState(false);
+    const [surnameFocus, setSurnameFocus] = useState(false);
 
     const [user, setUser] = useState('')
     const [validUser, setValidUser] = useState(false);
@@ -32,11 +41,23 @@ function Signin () {
         userRef.current.focus();
     }, [])
 
-    //validation du username avec les conditions REGEX
+    //validation du mail avec les conditions REGEX
     useEffect(() => {
-        const result = USER_REGEX.test(user);
+        const result = EMAIL_REGEX.test(user)
         setValidUser(result);
     }, [user])
+
+    //validation du name avec les conditions REGEX
+    useEffect(() => {
+        const result = NAME_REGEX.test(name);
+        setValidName(result);
+    },[name])
+
+    //validation du surname avec les conditions REGEX
+    useEffect(() => {
+        const result = NAME_REGEX.test(surname);
+        setValidSurname(result)
+    },[surname])
 
     //validation du pwd avec les conditions REGEX
     useEffect(() => {
@@ -49,19 +70,22 @@ function Signin () {
     //Affichage message erreur
     useEffect(() => {
         setErrMsg('');
-    }, [user, pwd, matchPwd])
+    }, [name, surname, user, pwd, matchPwd])
 
     //Permet de soumettre le formulaire avec une double validation des conditions REGEX vers le Backend
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const v1 = USER_REGEX.test(user);
+        const v1 = EMAIL_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
-        if(!v1 || !v2) {
+        const v3 = NAME_REGEX.test(name,surname)
+        if(!v1 || !v2 || !v3) {
             setErrMsg("Entrée invalide");
             return;
         }
         try {
             const response = await axios.post(SIGNIN_URL,{
+                    name: name,
+                    surname: surname,
                     user: user,
                     password: pwd
                 }
@@ -91,6 +115,59 @@ function Signin () {
                     <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
                     <form method="post" onSubmit={handleSubmit} className='login-wrapper signin'>
                         <h1 className='login-title'>Inscription</h1>
+                        <label htmlFor="username" className='input-title'>
+                            Nom :
+                            <FontAwesomeIcon icon={faCheck} className={validName ? "valid" : "hide"}/>
+                            <FontAwesomeIcon icon={faTimes} className={validName || !name ? "hide" : "invalid"}/>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="username" 
+                            ref={userRef} 
+                            autoComplete="off" 
+                            onChange={(e) => setName(e.target.value)} 
+                            required  
+                            aria-invalid={validName ? "false" : "true"}
+                            aria-describedby="usernote"
+                            onFocus={() => setNameFocus(true)}
+                            onBlur={() => setNameFocus(false)} //lorsque vous quittez le champ de saisie utilisateur
+                            placeholder='Tape ton nom'>
+                        </input>
+                        <p id="usernote" className={nameFocus && name && !validName ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle}/>
+                            Ne doit pas contenir de caractères spéciaux :<br/>
+                                <span aria-label="exclamation mark"> !</span> 
+                                <span aria-label="at symbol"> @</span> 
+                                <span aria-label="hashtag"> #</span> 
+                                <span aria-label="dollar sign"> $</span> 
+                                <span aria-label="percent"> %</span>
+                        </p>
+                        <label htmlFor="surname" className='input-title'>
+                            Prénom :
+                            <FontAwesomeIcon icon={faCheck} className={validSurname ? "valid" : "hide"}/>
+                            <FontAwesomeIcon icon={faTimes} className={validSurname || !surname ? "hide" : "invalid"}/>
+                        </label>
+                        <input 
+                            type="text" 
+                            id="surname" 
+                            autoComplete="off" 
+                            onChange={(e) => setSurname(e.target.value)} 
+                            required  
+                            aria-invalid={validSurname ? "false" : "true"}
+                            aria-describedby="surnamenote"
+                            onFocus={() => setSurnameFocus(true)}
+                            onBlur={() => setSurnameFocus(false)} //lorsque vous quittez le champ de saisie utilisateur
+                            placeholder='Tape ton prénom'>
+                        </input>
+                        <p id="surnamenote" className={surnameFocus && surname && !validSurname ? "instructions" : "offscreen"}>
+                            <FontAwesomeIcon icon={faInfoCircle}/>
+                            Ne doit pas contenir de caractères spéciaux :<br/>
+                                <span aria-label="exclamation mark"> !</span> 
+                                <span aria-label="at symbol"> @</span> 
+                                <span aria-label="hashtag"> #</span> 
+                                <span aria-label="dollar sign"> $</span> 
+                                <span aria-label="percent"> %</span>
+                        </p>
                         <label htmlFor="email" className='input-title'>
                             Email :
                             <FontAwesomeIcon icon={faCheck} className={validUser ? "valid" : "hide"}/>
@@ -99,7 +176,6 @@ function Signin () {
                         <input 
                             type="email" 
                             id="email" 
-                            ref={userRef} 
                             autoComplete="off" 
                             onChange={(e) => setUser(e.target.value)} 
                             required  

@@ -829,4 +829,12 @@ nav a:hover {
 }
 .invalid path {
   fill: red;
+}
+
+.errmsg {
+  background-color: lightpink;
+  color: firebrick;
+  font-weight: bold;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=main.css.map */
