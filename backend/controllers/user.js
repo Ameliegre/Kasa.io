@@ -12,9 +12,12 @@ exports.signup = async (req,res,next) => {
 
         let user = req.body.user;
         let password = hash;
+
+        let name = [req.body.surname,req.body.name].join(' ');
         
         let sql = "INSERT INTO host SET ?";
         let values = {
+            name : name, 
             email: user,
             password: password
         };
@@ -23,7 +26,6 @@ exports.signup = async (req,res,next) => {
             if (err) {
                 return console.error(err.message);
             }
-            console.log(result)
             res.status(201).json({user: user, id: result.insertId}) 
         });
             
@@ -46,7 +48,6 @@ exports.login = async (req,res,next) => {
             } else if (result.length === 0) {
                 return res.status(401).send("Veuillez verifier vos identifiants")
             } else {
-                console.log()
                 bcrypt.compare(password, result[0].password, (err, resultBcrypt) => {
                     console.log('inscrit' , result)
                     if(resultBcrypt) {
