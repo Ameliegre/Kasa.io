@@ -10,21 +10,38 @@ import LodgingForm from './Pages/lodging-form'
 import Header from './Components/header'
 import Footer from './Components/footer'
 import './Utils/Style/main.css'
+import { AuthProvider } from './Context/AuthContext'
+import RequireAuth from './Components/requireAuth'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <Header/>
-      <Routes>
-        <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/signin' element={<Signin/>}/>
-        <Route path="/home" element={<Home/>}/>
-        <Route path="/about" element={<About/>}/>
-        <Route path="/lodging-form/:id" element={<LodgingForm/>}/>
-        <Route path="*" element={<Error/>}/>
-      </Routes>
-      <Footer />
+      <AuthProvider>
+        <Header/>
+        <Routes>
+          {/*public routes*/}
+          <Route exact path='/login' element={<Login/>}/>
+          <Route exact path='/signin' element={<Signin/>}/>
+
+          {/*private routes*/}
+          <Route element={<RequireAuth/>}>
+            <Route path="/home" element={<Home/>}/>
+          </Route>
+
+          <Route element={<RequireAuth/>}>
+            <Route path="/about" element={<About/>}/>
+          </Route>
+
+          <Route element={<RequireAuth/>}>
+            <Route path="/lodging-form/:id" element={<LodgingForm/>}/>
+          </Route>
+
+          {/*public and private routes*/}
+          <Route path="*" element={<Error/>}/>
+        </Routes>
+        <Footer />
+      </AuthProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
