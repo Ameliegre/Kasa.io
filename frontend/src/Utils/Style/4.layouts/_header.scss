@@ -13,10 +13,10 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 34%;
     a {
         text-decoration: none;
         border-bottom: transparent solid 2px;
+        margin-left: -14%;
         &:hover {
             border-bottom: $primary-color solid 2px;
         }
@@ -28,11 +28,11 @@ nav {
     @include mobile-only {
         font-size: 12px;
         margin-left: 0px;
-        width:60%;
     }
     @include tablet-only {
         font-size: 16px;
-        margin-left: 0px;
-        width: 64%;
+       a {
+        margin-left: -6%;
+       }
     }
 }

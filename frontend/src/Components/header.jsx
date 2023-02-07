@@ -1,6 +1,7 @@
 import pink_logo from '../Assets/logo-pink.svg'
 import { useSignOut } from 'react-auth-kit'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Header() {
 
@@ -24,9 +25,9 @@ function Header() {
         <div className="header-container">
             <img src={pink_logo} alt="logo Kasa rose" className='pink_logo'/>
             <nav>
-                <a href='/'>Accueil</a>
-                <a href='/about'>A Propos</a>
-                <button className="log-btn" onClick={logout}>Se déconnecter</button>
+                <Link to={'/'}>Accueil</Link>
+                <Link to={'/about'}>A Propos</Link>
+                <Link to={logout} className="log-btn">Se déconnecter</Link>
             </nav>
         </div>
     )
