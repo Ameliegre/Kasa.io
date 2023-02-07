@@ -1,10 +1,10 @@
 .pink_logo {
     margin-left:0%;
     @include mobile-only {
-        height: 40px;
+        height: 34px;
     }
     @include tablet-only {
-        height: 50px;
+        height: 42px;
     }
 }
 
@@ -12,20 +12,27 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
+    width: 34%;
     a {
         text-decoration: none;
-        margin-left: 30px;
         border-bottom: transparent solid 2px;
         &:hover {
             border-bottom: $primary-color solid 2px;
         }
     } 
+    .log-btn {
+        @include log-btn;
+        color: white;
+    }
     @include mobile-only {
         font-size: 12px;
         margin-left: 0px;
+        width:60%;
     }
     @include tablet-only {
         font-size: 16px;
         margin-left: 0px;
+        width: 64%;
     }
 }

@@ -15,3 +15,16 @@
         @content;
     }
 }
+
+@mixin log-btn {
+    margin-top: 20px;
+    padding: 12px 0px;
+    border-color: transparent;
+    background-color: $primary-color;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    @include mobile-only {
+        font-size: 10px;
+    }
+}

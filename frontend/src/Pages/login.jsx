@@ -1,19 +1,15 @@
 import { useState, useRef, useEffect} from "react";
-import useAuth from "../Hooks/useAuth";
 import pink_logo from '../Assets/logo-pink.svg'
 import axios from '../Api/axios'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useSignIn } from 'react-auth-kit'
+import { useNavigate } from "react-router-dom";
 
 const LOGIN_URL ='/api/login';
 
 function Login () {
-    //Definition du nouveau state auth si la connexion se fait avec succès
-    const { setAuth } = useAuth();
 
-    //
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/home";
+    const nav = useNavigate();
+    const signIn = useSignIn();
 
     const userRef = useRef();
     const errRef = useRef();
@@ -40,13 +36,20 @@ function Login () {
                     user: user,
                     password: pwd
                 });
+
+                if (signIn({
+                    token: response.data.accessToken,
+                    expiresIn: 60,
+                    tokenType: "Bearer",
+                    authState: { user: user }
+                    })) {
+                        return nav('/');
+                    }
+
                 console.log(response?.data);
-                //const accessToken = response?.data?.accessToken;
-                //const roles = response?.data?.roles;
-                setAuth({user, pwd})
+               
                 setUser('');
                 setPwd('');
-                navigate(from, {replace: true});
             } catch (err) {
                 if (!err?.response) {
                     setErrMsg('Echec de la connexion');
