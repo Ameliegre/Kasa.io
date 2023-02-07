@@ -25,9 +25,9 @@ function Header() {
         <div className="header-container">
             <img src={pink_logo} alt="logo Kasa rose" className='pink_logo'/>
             <nav>
-                <Link to={'/'}>Accueil</Link>
-                <Link to={'/about'}>A Propos</Link>
-                <Link to={logout} className="log-btn">Se déconnecter</Link>
+                <Link to='/'>Accueil</Link>
+                <Link to='/about'>A Propos</Link>
+                <Link to='/login'><button className="log-btn" onClick={logout}>Se déconnecter</button></Link>
             </nav>
         </div>
     )
