@@ -30,6 +30,9 @@
     justify-content: space-evenly;
     padding: 2%;
     margin-top: 2%;
+    @include mobile-only {
+        padding: 7%;
+    }
 }
 
 .collapse-container {
