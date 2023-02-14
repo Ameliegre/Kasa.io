@@ -14,4 +14,11 @@ db.connect(function(err) {
     console.log("Connecté à la base de données MySQL!"); 
 });
 
+// db.query("SELECT * FROM about", (err, result) => {
+//     if (err) {
+//         return console.error(error.message);
+//       }
+//       console.log(result);
+// })
+
 module.exports = db; 
