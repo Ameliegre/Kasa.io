@@ -1,11 +1,31 @@
 import { NavLink } from 'react-router-dom'
-import lodgingList from '../Datas/logements.json'
+import axios from '../Api/axios'
+import { useState } from 'react'
+import { useEffect } from "react";
+
+const LODG_URL ='/api/lodging';
 
 function Card () {
 
+    const [lodg, setLodg] = useState([])
+
+    const getLodg = async () => {
+        try {
+            const response = await axios.get(LODG_URL);
+            setLodg(response.data)
+        } catch (err) {
+            console.log(err)
+        }
+    } 
+
+    useEffect(() => {
+        getLodg();
+    }, []);
+    
+
     return (
         <div className="card-container">
-                {lodgingList.map((lodging) => (
+                {lodg.map((lodging) => (
                     <NavLink to={`/lodging-form/${lodging.id}`} key={lodging.id}>
                         <div className="card-element">
                             <h1 className='card-title'>{lodging.title}</h1>
