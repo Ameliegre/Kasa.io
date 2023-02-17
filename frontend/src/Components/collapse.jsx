@@ -26,7 +26,7 @@ function Collapse () {
     return (
         <div className="collapse-container">
             {about.map((about) => (
-                <CollapseItem key={about.id} title={about.title} text={about.text}/>
+                <CollapseItem key={about.id} title={about.title} description={about.text}/>
             ))}
         </div>
     )

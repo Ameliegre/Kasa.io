@@ -253,30 +253,13 @@ ul {
 }
 
 .slidedown {
-  -webkit-animation: slidedown 0.7s forwards;
-          animation: slidedown 0.7s forwards;
+  animation: slidedown 0.7s forwards;
   overflow: hidden;
 }
 
 .slideup {
-  -webkit-animation: slideup 0.7s forwards;
-          animation: slideup 0.7s forwards;
+  animation: slideup 0.7s forwards;
   overflow: hidden;
-}
-
-@-webkit-keyframes slidedown {
-  from {
-    max-height: 0px;
-    opacity: 0;
-    transform: translateY(-50px);
-    padding: 0 20px;
-  }
-  to {
-    max-height: 250px;
-    opacity: 1;
-    transform: translateY(0px);
-    padding: 20px;
-  }
 }
 
 @keyframes slidedown {
@@ -291,20 +274,6 @@ ul {
     opacity: 1;
     transform: translateY(0px);
     padding: 20px;
-  }
-}
-@-webkit-keyframes slideup {
-  from {
-    max-height: 250px;
-    opacity: 1;
-    transform: translateY(0px);
-    padding: 20px;
-  }
-  to {
-    opacity: 0;
-    transform: translateY(-50px);
-    max-height: 0px;
-    padding: 0 20px;
   }
 }
 @keyframes slideup {
@@ -595,6 +564,7 @@ nav .log-btn {
   -moz-column-gap: 6%;
        column-gap: 6%;
   margin-top: 2%;
+  width: 100%;
 }
 .collapse-container-lodging .collapse {
   font-weight: 400;

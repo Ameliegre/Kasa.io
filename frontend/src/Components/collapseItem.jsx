@@ -1,16 +1,16 @@
 import { useState } from "react";
 import arrow from "../Assets/arrow.svg"
 
-function CollapseItem ({title, text, index}) {
+function CollapseItem({description, title, equipments, index}) {
+    
     const [isOpen, setIsOpen] = useState(false);
 
-    const content = Array.isArray(text) ? (
+    const content = equipments ? (
         <ul className={"collapse-text list " + (isOpen ? 'slidedown' : 'slideup' )}>
-            {text.map((equipment,index) => <li  key={index}>{equipment}</li>)}
+            {Object.values(equipments).map((equipment,index) => <li  key={index}>{equipment}</li>)}
         </ul>
-        
         ) : (
-        <p className={"collapse-text  " + (isOpen ? 'slidedown' : 'slideup' )}>{text}</p> 
+        <p className={"collapse-text  " + (isOpen ? 'slidedown' : 'slideup' )}>{description}</p> 
     )
 
     return  (

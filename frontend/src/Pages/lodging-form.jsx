@@ -25,8 +25,6 @@ function LodgingForm () {
         }
     } 
 
-    console.log(lodge)
-
     useEffect(() => {
         getOneLodge();
     }, []);
@@ -47,7 +45,7 @@ function LodgingForm () {
         <div>
             <Header/>
             <div className='page-container'>
-                <Slider/>
+                <Slider pictures={lodge.pictures}/>
                 <div className='lodging-text-container'>
                     <div className='lodging-text'>
                         <h1>{lodge.title}</h1>
@@ -62,10 +60,10 @@ function LodgingForm () {
                         <Rating scaleValue={ratingNumber}/>
                     </div>
                 </div>
-                {/* <div className='collapse-container-lodging'>
-                    <CollapseItem title="Description" text={lodge.description}/>
-                    <CollapseItem title="Équipements" text={lodge.equipments}/>
-                </div> */}
+                <div className='collapse-container-lodging'>
+                    <CollapseItem title="Description" description={lodge.description}/>
+                    <CollapseItem title="Équipements" equipments={lodge.equipments}/>
+                </div>
             </div>
             <Footer/>
         </div>
