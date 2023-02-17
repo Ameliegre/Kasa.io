@@ -90,7 +90,11 @@ exports.getOneLodging = async (req,res,next) => {
 
             // Finally, convert the formattedResult object into an array
             formattedResult = Object.values(formattedResult);
-            res.status(200).send(formattedResult)
+            if (formattedResult.length > 0) {
+                res.status(200).send(formattedResult)
+            } else {
+                res.status(404).send(formattedResult)
+            }
             console.log(formattedResult)
         })
 

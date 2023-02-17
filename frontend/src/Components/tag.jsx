@@ -1,14 +1,15 @@
 import { useParams } from 'react-router-dom'
 import tags from "../Datas/logements.json"
+import axios from '../Api/axios'
+import { useState, useEffect } from 'react'
 
-function Tag () {
+const TAG_URL = '/api/lodging/'
 
-    const {id} = useParams()
-    const currentlodge = tags.find(item => item.id === id);
-    
+function Tag ({tags}) {
+    console.log('iririri',tags)
     return (
         <div className="tags-container">
-            {currentlodge.tags.map((tag,index) => <div className="tags-element" key={index}>{tag}</div>)}
+            {Object.values(tags).map((tag, index) => <div className="tags-element" key={index}>{tag}</div>)}
         </div>
     )
 }
