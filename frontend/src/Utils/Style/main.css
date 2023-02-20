@@ -735,6 +735,16 @@ nav .log-btn {
   box-shadow: 5px 5px 10px grey;
   color: unset;
 }
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .login-wrapper {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .login-wrapper {
+    width: 60%;
+  }
+}
 .login-wrapper .input-title {
   width: 100%;
   padding-top: 10px;
@@ -752,6 +762,16 @@ nav .log-btn {
 }
 .login-wrapper .log-btn span {
   color: white;
+}
+@media screen and (min-width: 426px) and (max-width: 1023px) {
+  .login-wrapper .log-btn {
+    width: 38%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .login-wrapper .log-btn {
+    width: 52%;
+  }
 }
 .login-wrapper input {
   width: 98%;

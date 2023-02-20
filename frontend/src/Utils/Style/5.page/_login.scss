@@ -8,6 +8,12 @@
     border-radius: 4px;
     box-shadow: 5px 5px 10px grey;
     color:unset;
+    @include tablet-only{
+        width: 60%;
+    }
+    @include mobile-only {
+        width: 60%;
+    }
     .input-title {
         width: 100%;
         padding-top: 10px;
@@ -24,6 +30,12 @@
         margin-bottom: 20px;
         & span {
             color: white;
+        }
+        @include tablet-only {
+            width:38%;
+        }
+        @include mobile-only {
+            width: 52%;
         }
     }
     input {
