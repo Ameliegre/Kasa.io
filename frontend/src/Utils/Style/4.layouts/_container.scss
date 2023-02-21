@@ -30,8 +30,13 @@
     justify-content: space-evenly;
     padding: 2%;
     margin-top: 2%;
-    @include mobile-only {
-        padding: 7%;
+    a {
+        @include tablet-only {
+            width: 100%;
+        }
+        @include mobile-only {
+            width: 100%;
+        }
     }
 }
 
