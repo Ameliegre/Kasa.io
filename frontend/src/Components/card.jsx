@@ -3,7 +3,7 @@ import axios from '../Api/axios'
 import { useState } from 'react'
 import { useEffect } from "react";
 
-const LODG_URL ='/api/lodging';
+const LODG_URL ='/api/lodge';
 
 function Card () {
 

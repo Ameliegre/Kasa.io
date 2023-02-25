@@ -5,7 +5,7 @@ require('dotenv').config();
 //Import des routes
 const userRoutes = require('./routes/user')
 const aboutRoutes = require('./routes/about')
-const lodgingRoutes = require('./routes/lodging')
+const lodgeRoutes = require('./routes/lodge')
 
 //Appel de la methode pour créer une application
 const app = express();
@@ -28,7 +28,7 @@ app.get('/',(req,res) => {
 
 app.use('/api', userRoutes);
 app.use('/api', aboutRoutes);
-app.use('/api', lodgingRoutes);
+app.use('/api', lodgeRoutes);
 
 //export du fichier
 module.exports = app;

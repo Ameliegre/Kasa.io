@@ -8,7 +8,7 @@ import Rating from '../Components/rating'
 import CollapseItem from '../Components/collapseItem'
 import axios from '../Api/axios'
 
-const ONELODG_URL ='/api/lodging/';
+const ONELODG_URL ='/api/lodge/';
 
 function LodgingForm () {
 
