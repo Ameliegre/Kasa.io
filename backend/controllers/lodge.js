@@ -117,7 +117,7 @@ exports.createLodge = async (req, res, next) => {
         title: 'Maison de campagne',
         cover: 'https://i.f1g.fr/media/eidos/805x604_crop/2020/04/27/XVM6fdd6896-8650-11ea-bef4-6835ce68601a-805x604.jpg',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-        host_id: 36,
+        host_id: 38,
         rating: 0,
         location: 'Vosges - Gérardmer'
         };

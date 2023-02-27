@@ -12,15 +12,34 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
+    width:334px;
     a {
         text-decoration: none;
-        border-bottom: transparent solid 2px;
-        margin-left: -14%;
-        &:hover {
-            border-bottom: $primary-color solid 2px;
-        }
+        color: black;
     } 
+    .button-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: inherit;
+        align-items: center;
+        background: transparent;
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 26px;
+        padding: 5px 5px 5px 12px;
+        width: 100px;
+        color: #DDDDDD;
+        transition: box-shadow 0.2s ease;
+        .profil-picture-img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .icon-bars {
+            height: 24px;
+        }
+    }
     .log-btn {
         @include log-btn;
         color: white;
@@ -35,4 +54,24 @@ nav {
         margin-left: -6%;
        }
     }
+}
+
+.button-account.profil {
+    align-self: flex-end;
+    margin-left: 40px;
+}
+
+.button-account.redirect {
+    border: transparent;
+    padding: 5px 17px 5px 20px;
+    justify-content: center;
+}
+
+button:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.button-account.redirect:hover {
+    background-color: #F7F7F7;
+    box-shadow: none;
 }
