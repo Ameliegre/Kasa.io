@@ -70,3 +70,46 @@ exports.login = async (req,res,next) => {
         res.status(500).send(error)
     }  
 }
+
+exports.updateProfil = async (req,res,next) => {
+    try {
+        const hostId = req.params.id
+
+        const hostValues = {
+        picture: 'https://static3.depositphotos.com/1000951/138/i/450/depositphotos_1380772-stock-photo-profile-of-beautiful-smiling-girl.jpg',
+        };
+
+        const sql = 'UPDATE host SET ? WHERE `host`.`id` = ? '
+
+         await db.query(sql, [hostValues, hostId],  (err, result) => {
+            if (err) {
+                return console.error(err.message)
+            }
+                console.log(result.changedRows)
+                res.status(200).send(result)
+        })
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({err})
+    }  
+}
+
+exports.deleteProfil = async (req,res,next) => {
+    try {
+        const id = req.params.id
+        const sql = 'DELETE FROM `host` WHERE `host`.`id` = ? '
+
+        await db.query(sql, id, (err, result) => {
+            if (err) {
+                return console.error(err.message)
+            }
+                console.log(result)
+                res.status(200).send(result)
+        })
+
+    } catch (err) {
+        console.log(err)
+        res.status(500).send({err})
+    }
+}

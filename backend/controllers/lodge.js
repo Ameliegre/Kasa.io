@@ -204,9 +204,8 @@ exports.deleteLodge = async (req, res, next) => {
     try {
         const id = req.params.id
         const sql = 'DELETE FROM `logements` WHERE `logements`.`id` = ? '
-        const value = id;
 
-        await db.query(sql, value, (err, result) => {
+        await db.query(sql, id, (err, result) => {
             if (err) {
                 return console.error(err.message)
             }
@@ -222,13 +221,19 @@ exports.deleteLodge = async (req, res, next) => {
 
 exports.updateLodge = async (req, res, next) => {
     try {
-        const sql = 'UPDATE `logements` SET `title` = ? WHERE `logements`.`id` = ? '
-        const values = {
-            title : 'maison',
-            id: '00001'
-        }
+
+        const id = req.params.id
+        const logementValues = {
+        title: 'Maison',
+        cover: 'https://i.f1g.fr/media/eidos/805x604_crop/2020/04/27/XVM6fdd6896-8650-11ea-bef4-6835ce68601a-805x604.jpg',
+        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+        location: 'Vosges - Epinal'
+        };
+
+        const sql = 'UPDATE `logements` SET ? WHERE `logements`.`id` = ? '
         
-        await db.query(sql, values, (err, result) => {
+        
+        await db.query(sql, [logementValues, id],  (err, result) => {
             if (err) {
                 return console.error(err.message)
             }
