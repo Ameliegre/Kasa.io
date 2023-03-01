@@ -432,6 +432,7 @@ nav .button-account {
   width: 100px;
   color: #DDDDDD;
   transition: box-shadow 0.2s ease;
+  position: relative;
 }
 nav .button-account .profil-picture-img {
   height: 40px;
@@ -442,6 +443,9 @@ nav .button-account .profil-picture-img {
 }
 nav .button-account .icon-bars {
   height: 24px;
+}
+nav .button-account.close {
+  overflow: hidden;
 }
 nav .log-btn {
   margin-top: 20px;
@@ -474,7 +478,6 @@ nav .log-btn {
 }
 
 .button-account.profil {
-  align-self: flex-end;
   margin-left: 40px;
 }
 
@@ -484,13 +487,37 @@ nav .log-btn {
   justify-content: center;
 }
 
-button:hover {
+.button-account:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.18);
 }
 
 .button-account.redirect:hover {
   background-color: #F7F7F7;
   box-shadow: none;
+}
+
+.profile-menu {
+  position: absolute;
+  top: 62px;
+  right: -1px;
+  background-color: white;
+  height: 200px;
+  width: 216px;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+.profile-menu .header-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 30px;
+}
+.profile-menu .header-list .btn-list {
+  border: transparent;
+  background-color: transparent;
+  color: black;
+  padding-top: 10px;
+  cursor: pointer;
 }
 
 .fixed-header {
