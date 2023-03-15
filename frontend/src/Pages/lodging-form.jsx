@@ -27,7 +27,7 @@ function LodgingForm () {
 
     useEffect(() => {
         getOneLodge();
-    }, []);
+    });
 
     useEffect(() => {
         document.title = '🛖 Logement';
