@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Kasa/static/css/main.7a28377b.css",
+    "main.js": "/Kasa/static/js/main.e50be8aa.js",
+    "static/media/big-mountain.png": "/Kasa/static/media/big-mountain.cc7a05da2ad0e783537a.png",
+    "static/media/big-see.png": "/Kasa/static/media/big-see.024f945a990ae17b81b7.png",
+    "static/media/small-mountain.png": "/Kasa/static/media/small-mountain.09998aa56962f585ab75.png",
+    "static/media/small-see.png": "/Kasa/static/media/small-see.36c53dfbdc80c4e48b02.png",
+    "static/media/logo-pink.svg": "/Kasa/static/media/logo-pink.bb1c78bdbf97911cf6044e13e0c4f670.svg",
+    "static/media/logo-white.svg": "/Kasa/static/media/logo-white.ee689fd9409d1b5a898b4247819d8a00.svg",
+    "index.html": "/Kasa/index.html",
+    "static/media/bars-solid.svg": "/Kasa/static/media/bars-solid.69707d7401c01382651c5c630dc731f2.svg",
+    "static/media/arrow.svg": "/Kasa/static/media/arrow.18426cfa25b94103e78abf14a6463715.svg",
+    "static/media/empty-star.svg": "/Kasa/static/media/empty-star.7e4ba6032d7d80ecc30aa389973cef95.svg",
+    "static/media/full-star.svg": "/Kasa/static/media/full-star.6430150c126a3adf92c132c52c9c7428.svg",
+    "main.7a28377b.css.map": "/Kasa/static/css/main.7a28377b.css.map",
+    "main.e50be8aa.js.map": "/Kasa/static/js/main.e50be8aa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a28377b.css",
+    "static/js/main.e50be8aa.js"
+  ]
+}
