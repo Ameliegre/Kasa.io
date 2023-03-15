@@ -11,15 +11,8 @@
         box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366); 
     }
     @include mobile-only {
-<<<<<<< HEAD:src/Utils/Style/3.components/_card.scss
-        width: 100%;
-        height: 248px;
-        margin:0;
-        margin-bottom: 15px;
-=======
         height: 248px;
         width: 96%;
->>>>>>> backend:frontend/src/Utils/Style/3.components/_card.scss
     }
     @include tablet-only {
         height: 248px;
