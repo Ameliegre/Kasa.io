@@ -1,0 +1,60 @@
+.card-element {
+    height: 254px;
+    width: 254px;
+    margin: 2%;
+    border-radius: 25px;
+    background-color: $primary-color;
+    opacity: 1;
+    &:hover {
+        cursor: pointer;
+        transition: all 0.2s ease-out;
+        box-shadow: 6px 8px 10px rgba(40, 39, 41, 0.366); 
+    }
+    @include mobile-only {
+<<<<<<< HEAD:src/Utils/Style/3.components/_card.scss
+        width: 100%;
+        height: 248px;
+        margin:0;
+        margin-bottom: 15px;
+=======
+        height: 248px;
+        width: 96%;
+>>>>>>> backend:frontend/src/Utils/Style/3.components/_card.scss
+    }
+    @include tablet-only {
+        height: 248px;
+        width: 96%;
+    }
+}
+
+.card-img {
+    height: 100%;
+    width: 100%;
+    border-radius: 25px;
+    object-fit: cover;
+    margin: 0;
+    &:hover {
+        opacity: 0.4;
+        transition: all 0.5s ease-out; 
+    }
+}
+
+.card-title {
+    margin: 0;
+    position: absolute;
+    width: 246px;
+    margin-top: 200px;
+    margin-left: 10px;
+    color: $text-color;
+    text-shadow: 1px 1px 2px grey;
+    &:hover {
+        text-shadow: none;
+        opacity: 1;
+    }
+    @include mobile-only {
+        margin-top: 192px;
+    }
+    @include tablet-only {
+        margin-top: 192px;
+    }
+}

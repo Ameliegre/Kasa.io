@@ -1,0 +1,104 @@
+.pink_logo {
+    margin-left:0%;
+    @include mobile-only {
+        height: 34px;
+    }
+    @include tablet-only {
+        height: 42px;
+    }
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:334px;
+    a {
+        text-decoration: none;
+        color: black;
+    } 
+    .button-account {
+        display: flex;
+        flex-direction: row;
+        justify-content: inherit;
+        align-items: center;
+        background: transparent;
+        cursor: pointer;
+        border: 1px solid;
+        border-radius: 26px;
+        padding: 5px 5px 5px 12px;
+        width: 100px;
+        color: #DDDDDD;
+        transition: box-shadow 0.2s ease;
+        position: relative;
+        .profil-picture-img {
+            height: 40px;
+            width: 40px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        .icon-bars {
+            height: 24px;
+        }
+        &.close {
+            overflow: hidden;
+        }
+    }
+    .log-btn {
+        @include log-btn;
+        color: white;
+    }
+    @include mobile-only {
+        font-size: 12px;
+        margin-left: 0px;
+    }
+    @include tablet-only {
+        font-size: 16px;
+       a {
+        margin-left: -6%;
+       }
+    }
+}
+
+.button-account.profil {
+    margin-left: 40px;
+}
+
+.button-account.redirect {
+    border: transparent;
+    padding: 5px 17px 5px 20px;
+    justify-content: center;
+}
+
+.button-account:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.18);
+}
+
+.button-account.redirect:hover {
+    background-color: #F7F7F7;
+    box-shadow: none;
+}
+
+.profile-menu {
+    position: absolute;
+    top:62px;
+    right: -1px;
+    background-color: white;
+    height: 200px;
+    width: 216px;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    .header-list {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 30px;
+        .btn-list {
+            border: transparent;
+            background-color: transparent;
+            color: black;
+            padding-top: 10px;
+            cursor: pointer;
+        }
+    }
+}

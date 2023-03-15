@@ -1,0 +1,34 @@
+.img-Banner {
+    width: 100%;
+    margin: 0;
+    object-fit: cover;
+    border-radius: 25px;
+    filter : contrast(80%);
+    @include mobile-only {
+        border-radius: 10px;
+        height: 150px;
+    }
+    @include tablet-only {
+        border-radius: 10px;
+        height: 150px;
+    }
+}
+
+.banner-title {
+    position: absolute;
+    bottom: 38%;
+    left: 25%;
+    color:$text-color;
+    @include mobile-only {
+        font-size:24px;
+        left:22px;
+    }
+    @include tablet-only {
+        font-size: 30px;
+<<<<<<< HEAD:src/Utils/Style/3.components/_banner.scss
+        left: 22%;
+=======
+        left: 22%
+>>>>>>> backend:frontend/src/Utils/Style/3.components/_banner.scss
+    }
+}
