@@ -94,8 +94,9 @@ function Signin () {
             setSuccess(true);
         } catch (err) {
             if (!err?.response) {
-                setErrMsg('Echec de l\'inscription');
+                setErrMsg('Echec de l\'inscription', 'verifier identifiants');
             } 
+            console.log(err)
             errRef.current.focus();
         }
     }
