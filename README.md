@@ -5,22 +5,22 @@ Projet réalisé dans le cadre de la formation en ligne Developpeur Web chez Ope
 
 ## Installation
 
-1. Remplacer les variables d'environnement par votre serveur de bdd
-`DB_HOST='localhost'` 
-`DB_USER='root'`
-`DB_PASSWORD='root'`
-`DB_NAME='Kasa'`
-`DB_PORT=3306`
+1. Remplacer les variables d'environnement par votre serveur de bdd  
+`DB_HOST='localhost'`   
+`DB_USER='root'`  
+`DB_PASSWORD='root'`  
+`DB_NAME='Kasa'`  
+`DB_PORT=3306`  
 
 2. Initialiser la base de donnée avec le dump disponible dans le dossier /dump
 
-3. Lancement du projet frontend
-`cd frontend`
-`npm start`
+3. Lancement du projet frontend  
+`cd frontend`  
+`npm start`  
 
-4. Lancement du projet backend
-`cd backend`
-`nodemon server.js`
+4. Lancement du projet backend  
+`cd backend`  
+`nodemon server.js`  
 
 
 ## Compétences évaluées :
