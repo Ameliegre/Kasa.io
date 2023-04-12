@@ -16,7 +16,6 @@ function Home () {
         <div>
             <Header/>
             <div className='page-container'>
-                
                 <Banner>
                     <picture>
                         <source srcSet={seeBannerS} media="(max-width: 425px)"/>

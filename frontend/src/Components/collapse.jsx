@@ -22,7 +22,6 @@ function Collapse () {
         getAbout();
     }, []);
     
-
     return (
         <div className="collapse-container">
             {about.map((about) => (

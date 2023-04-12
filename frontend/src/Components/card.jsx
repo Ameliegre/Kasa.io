@@ -1,35 +1,31 @@
 import { NavLink } from 'react-router-dom'
-import axios from '../Api/axios'
-import { useState } from 'react'
 import { useEffect } from "react";
-
-const LODG_URL ='/api/lodge';
+import { useSelector, useStore } from 'react-redux'
+import { fetchOrUpdateLodges } from '../Features/lodges';
+import { selectLodges } from '../Utils/selector';
 
 function Card () {
+    // on récupère le store grâce au hook useStore()
+    const store = useStore()
 
-    const [lodg, setLodg] = useState([])
-
-    const getLodg = async () => {
-        try {
-            const response = await axios.get(LODG_URL);
-            setLodg(response.data)
-        } catch (err) {
-            console.log(err)
-        }
-    } 
-
+    // on utilise useEffect pour lancer la requête au chargement du composant
     useEffect(() => {
-        getLodg();
-    }, []);
-    
+    // on exécute notre action asynchrone avec le store en paramètre
+    fetchOrUpdateLodges(store)
+    // On suit la recommandation d'ESLint de passer le store
+    // en dépendances car il est utilisé dans l'effet
+    // cela n'as pas d'impacte sur le fonctionnement car le store ne change jamais
+    }, [store])
+
+    const lodges = useSelector(selectLodges)
 
     return (
         <div className="card-container">
-                {lodg.map((lodging) => (
-                    <NavLink to={`/lodging-form/${lodging.id}`} key={lodging.id}>
+                {lodges.data?.map((lodge) => (
+                    <NavLink to={`/lodging-form/${lodge.id}`} key={lodge.id}>
                         <div className="card-element">
-                            <h1 className='card-title'>{lodging.title}</h1>
-                            <img className='card-img' src={lodging.cover} alt="logement"/>
+                            <h1 className='card-title'>{lodge.title}</h1>
+                            <img className='card-img' src={lodge.cover} alt="logement"/>
                         </div>
                     </NavLink>
                 ))}

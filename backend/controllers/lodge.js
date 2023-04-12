@@ -141,7 +141,6 @@ exports.createLodge = async (req, res, next) => {
             if (err) {
                 db.rollback(() => {
                 console.error('Error inserting into logements table: ', err);
-                
                 });
                 return;
             }

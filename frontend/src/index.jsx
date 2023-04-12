@@ -10,28 +10,32 @@ import LodgingForm from './Pages/lodging-form'
 import './Utils/Style/main.css'
 import { AuthProvider } from 'react-auth-kit'
 import { RequireAuth } from 'react-auth-kit'
+import { Provider } from 'react-redux'
+import store from '../src/Utils/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <AuthProvider authType = {'cookie'}
-                    authName={'_auth'}
-                    cookieDomain={window.location.hostname}
-                    cookieSecure={false}>
-    <BrowserRouter>
-      <React.StrictMode>
-        <Routes>
-            {/*public routes*/}
-            <Route exact path='/login' element={<Login/>}/>
-            <Route exact path='/signin' element={<Signin/>}/>
-            <Route path="/*" element={<Error/>}/>
+  <Provider store={store}>
+    <AuthProvider authType = {'cookie'}
+                      authName={'_auth'}
+                      cookieDomain={window.location.hostname}
+                      cookieSecure={false}>
+      <BrowserRouter>
+        <React.StrictMode>
+          <Routes>
+              {/*public routes*/}
+              <Route exact path='/login' element={<Login/>}/>
+              <Route exact path='/signin' element={<Signin/>}/>
+              <Route path="/*" element={<Error/>}/>
 
-            {/*private routes*/}
-            <Route path="/" element={<RequireAuth loginPath='/login'><Home/></RequireAuth>}/>
-            <Route path="/about" element={<RequireAuth loginPath='/login'><About/></RequireAuth>}/>
-            <Route path="/lodging-form/:id" element={<RequireAuth loginPath='/login'><LodgingForm/></RequireAuth>}/>
-        </Routes>
-      </React.StrictMode>
-    </BrowserRouter>
-  </AuthProvider>
+              {/*private routes*/}
+              <Route path="/" element={<RequireAuth loginPath='/login'><Home/></RequireAuth>}/>
+              <Route path="/about" element={<RequireAuth loginPath='/login'><About/></RequireAuth>}/>
+              <Route path="/lodging-form/:id" element={<RequireAuth loginPath='/login'><LodgingForm/></RequireAuth>}/>
+          </Routes>
+        </React.StrictMode>
+      </BrowserRouter>
+    </AuthProvider>
+  </Provider>
   
 );
