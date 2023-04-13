@@ -1,9 +1,14 @@
 import arrow from '../Assets/arrow.svg'
-import {useState} from 'react';
+import { useState } from 'react';
 
 function Slider ({pictures}) {
     
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    
+    if (!pictures) {
+         return null 
+    }
+
     const currentlodge = Object.values(pictures);
 
     const prevImage = () => 

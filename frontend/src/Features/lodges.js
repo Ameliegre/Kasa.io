@@ -2,6 +2,13 @@ import { createAction, createReducer } from "@reduxjs/toolkit"
 import { selectLodges } from '../Utils/selector'
 import axios from '../Api/axios'
 
+///5 valeurs pour la propriété status
+// “void” si la requête n’a pas encore été lancée ;
+// “pending” si la requête est en cours ;
+// “resolved” si la requête a retourné un résultat ;
+// “rejected” si la requête a échoué ;
+// “updating” la requête a retourné un résultat mais qu'une nouvelle requête est en cours pour mettre à jour les données.
+
 //Déclaration du state initial
 const initialState = {
     status: 'void',
@@ -70,6 +77,7 @@ export default createReducer(initialState, (builder) =>
 
 //Action Asynchrone pour call API
 export async function fetchOrUpdateLodges(store) {
+    //
     const status = selectLodges(store.getState()).status
     if (status === 'pending' || status === 'updating') {
         return

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Header from '../Components/header'
 import Footer from '../Components/footer'
 import Slider from '../Components/slider'
@@ -6,63 +6,61 @@ import { useParams, Navigate } from 'react-router-dom'
 import Tag from "../Components/tag"
 import Rating from '../Components/rating'
 import CollapseItem from '../Components/collapseItem'
-import axios from '../Api/axios'
-
-const ONELODG_URL ='/api/lodge/';
+import { useSelector, useStore } from 'react-redux'
+import { fetchOrUpdateLodge } from '../Features/lodge'
+import { selectLodge } from '../Utils/selector'
 
 function LodgingForm () {
 
-    const [lodge, setOneLodge] = useState()
-    const [error, setError] = useState()
-    const {id} = useParams()
+    // on récupère le store grâce au hook useStore()
+    const store = useStore()
+    const {id: lodgeId} = useParams()
 
-    const getOneLodge = async () => {
-        try {
-            const response = await axios.get(ONELODG_URL + id);
-            setOneLodge(response.data[0])
-        } catch (err) {
-            setError(err)
-        }
-    } 
-
+    // on utilise useEffect pour lancer la requête au chargement du composant
     useEffect(() => {
-        getOneLodge();
-    });
+    fetchOrUpdateLodge(store, lodgeId)
+    }, [store, lodgeId])
+
+    const lodge = useSelector(selectLodge(lodgeId))
+
+    console.log(lodge.data)
 
     useEffect(() => {
         document.title = '🛖 Logement';
     })
 
-    if(error?.response?.status === 404) {
-        return <Navigate to={'/404'}/>
+    if(lodge.status === 'rejected') {
+         return <Navigate to={'/404'}/>
     }
+
     if (!lodge) {
-        return null 
+         return null 
     }
-    const ratingNumber = parseInt(lodge.rating)
+    
+    const ratingNumber = parseInt(lodge.data?.rating)
 
     return (
         <div>
             <Header/>
             <div className='page-container'>
-                <Slider pictures={lodge.pictures}/>
+                <Slider pictures={lodge.data?.pictures}/>
                 <div className='lodging-text-container'>
                     <div className='lodging-text'>
-                        <h1>{lodge.title}</h1>
-                        <h2>{lodge.location}</h2>
-                        <Tag tags={lodge.tags}/>
+                        <h1>{lodge.data?.title}</h1>
+                        <h2>{lodge.data?.location}</h2>
+                        <Tag tags={lodge.data?.tags}/>
                     </div>
                     <div className='lodging-wrapper'>
                         <div className='lodging-profile'>
-                                <p>{lodge.host.name}</p>
-                                <img src={lodge.host.picture} alt="profil du propriétaire"/>
+                                <p>{lodge.data?.host.name}</p>
+                                <img src={lodge.data?.host.picture} alt="profil du propriétaire"/>
                         </div>
                         <Rating scaleValue={ratingNumber}/>
                     </div>
                 </div>
                 <div className='collapse-container-lodging'>
-                    <CollapseItem title="Description" description={lodge.description}/>
-                    <CollapseItem title="Équipements" equipments={lodge.equipments}/>
+                    <CollapseItem title="Description" description={lodge.data?.description}/>
+                    <CollapseItem title="Équipements" equipments={lodge.data?.equipments}/>
                 </div>
             </div>
             <Footer/>
