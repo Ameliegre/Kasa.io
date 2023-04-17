@@ -34,7 +34,7 @@ function Header() {
                     <button className='button-account redirect'><Link to='/'>Accueil</Link></button>
                     <button className='button-account redirect'><Link to='/about'>A Propos</Link></button>
                     {/* <Link to='/login'><button className="log-btn" onClick={logout}>Se déconnecter</button></Link> */}
-                    <button className={'button-account profil ' + (open ? 'open' : 'close')} onClick={() => {setIsOpen(!open)}} >
+                    <div className={'button-account profil ' + (open ? 'open' : 'close')} onClick={() => {setIsOpen(!open)}} >
                             <img className='icon-bars' src={bars} alt='icon'/>
                             <img className='profil-picture-img' src='https://static3.depositphotos.com/1000951/138/i/450/depositphotos_1380772-stock-photo-profile-of-beautiful-smiling-girl.jpg' alt='profil'/>
                             <div className='profile-menu'>
@@ -46,7 +46,7 @@ function Header() {
                                     <Link to='/login'><button className='btn-list' onClick={logout}>Deconnexion</button></Link>
                                 </ul>
                             </div>
-                    </button>
+                    </div>
                 </nav>
             </div>
         </div>

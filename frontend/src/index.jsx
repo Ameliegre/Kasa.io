@@ -6,7 +6,7 @@ import Signin from './Pages/signin'
 import Home from './Pages/home'
 import Error from './Components/error'
 import About from './Pages/about'
-import LodgingForm from './Pages/lodging-form'
+import Lodge from './Pages/lodge'
 import './Utils/Style/main.css'
 import { AuthProvider } from 'react-auth-kit'
 import { RequireAuth } from 'react-auth-kit'
@@ -31,7 +31,7 @@ root.render(
               {/*private routes*/}
               <Route path="/" element={<RequireAuth loginPath='/login'><Home/></RequireAuth>}/>
               <Route path="/about" element={<RequireAuth loginPath='/login'><About/></RequireAuth>}/>
-              <Route path="/lodging-form/:id" element={<RequireAuth loginPath='/login'><LodgingForm/></RequireAuth>}/>
+              <Route path="/lodge/:id" element={<RequireAuth loginPath='/login'><Lodge/></RequireAuth>}/>
           </Routes>
         </React.StrictMode>
       </BrowserRouter>

@@ -1,7 +1,7 @@
 
 function Tag ({tags}) {
 
-     if (!tags) {
+    if (!tags) {
          return null 
     }
 

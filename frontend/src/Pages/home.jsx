@@ -3,7 +3,7 @@ import Footer from '../Components/footer'
 import Banner from '../Components/banner'
 import seeBannerXL from '../Assets/big-see.png'
 import seeBannerS from '../Assets/small-see.png'
-import Card from '../Components/card'
+import CardList from '../Components/card'
 import { useEffect } from 'react'
 
 function Home () {
@@ -24,7 +24,7 @@ function Home () {
                     </picture>
                     <h1 className='banner-title'>Chez vous,{window.innerWidth < 426 && <br/> } partout et ailleurs</h1>
                 </Banner>
-                <Card></Card>
+                <CardList></CardList>
             </div>
             <Footer/>
         </div>

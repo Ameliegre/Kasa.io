@@ -4,7 +4,7 @@ import { useSelector, useStore } from 'react-redux'
 import { fetchOrUpdateLodges } from '../Features/lodges';
 import { selectLodges } from '../Utils/selector';
 
-function Card () {
+function CardList () {
     // on récupère le store grâce au hook useStore()
     const store = useStore()
 
@@ -22,7 +22,7 @@ function Card () {
     return (
         <div className="card-container">
                 {lodges.data?.map((lodge) => (
-                    <NavLink to={`/lodging-form/${lodge.id}`} key={lodge.id}>
+                    <NavLink to={`/lodge/${lodge.id}`} key={lodge.id}>
                         <div className="card-element">
                             <h1 className='card-title'>{lodge.title}</h1>
                             <img className='card-img' src={lodge.cover} alt="logement"/>
@@ -33,4 +33,4 @@ function Card () {
     )
 }
 
-export default Card
+export default CardList

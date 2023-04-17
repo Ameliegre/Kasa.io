@@ -24,7 +24,7 @@ const lodgeRejected = createAction(
   })
 )
 
-//Verifie si  
+//Verifie si il y a bien un Id existant
 function setVoidIfUndefined(draft, lodgeId) {
   if (draft[lodgeId] === undefined) {
     draft[lodgeId] = { status: 'void' }

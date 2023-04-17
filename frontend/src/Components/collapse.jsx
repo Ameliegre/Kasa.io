@@ -1,30 +1,23 @@
 import CollapseItem from "./collapseItem";
-import axios from '../Api/axios'
-import { useState } from "react";
 import { useEffect } from "react";
+import { useSelector, useStore } from "react-redux";
+import { fetchOrUpdateAbout } from "../Features/about";
+import { selectAbout } from "../Utils/selector";
 
-const ABOUT_URL ='/api/about';
 
 function Collapse () {
 
-    const [about, setAbout] = useState([])
-
-    const getAbout = async () => {
-        try {
-            const response = await axios.get(ABOUT_URL);
-            setAbout(response.data)
-        } catch (err) {
-            console.log(err)
-        }
-    } 
+    const store = useStore()
 
     useEffect(() => {
-        getAbout();
-    }, []);
+        fetchOrUpdateAbout(store);
+    }, [store]);
+
+    const about = useSelector(selectAbout)
     
     return (
         <div className="collapse-container">
-            {about.map((about) => (
+            {about.data?.map((about) => (
                 <CollapseItem key={about.id} title={about.title} description={about.text}/>
             ))}
         </div>

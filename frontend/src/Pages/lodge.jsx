@@ -10,7 +10,7 @@ import { useSelector, useStore } from 'react-redux'
 import { fetchOrUpdateLodge } from '../Features/lodge'
 import { selectLodge } from '../Utils/selector'
 
-function LodgingForm () {
+function LodgePage () {
 
     // on récupère le store grâce au hook useStore()
     const store = useStore()
@@ -22,8 +22,6 @@ function LodgingForm () {
     }, [store, lodgeId])
 
     const lodge = useSelector(selectLodge(lodgeId))
-
-    console.log(lodge.data)
 
     useEffect(() => {
         document.title = '🛖 Logement';
@@ -69,4 +67,4 @@ function LodgingForm () {
     )
 }
 
-export default LodgingForm
+export default LodgePage
