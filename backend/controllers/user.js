@@ -71,6 +71,27 @@ exports.login = async (req,res,next) => {
     }  
 }
 
+//Fonction d'obtention des infos des utilisateurs
+exports.getConnectedUser = async (req,res,next) => {
+    try {
+        // const id = req.params.id
+        const sql = "SELECT * FROM host"
+
+        await db.query(sql, (err, result) => {
+            if (err) {
+                return console.error(err.message);
+            }
+                res.status(200).send(result)
+            }
+        )
+
+    } catch (err) {
+        console.error(err)
+        res.status(500).send({err})
+    }
+}
+
+//Fonction de modification pour la gestion du compte utilisateur
 exports.updateProfil = async (req,res,next) => {
     try {
         const hostId = req.params.id
@@ -95,6 +116,7 @@ exports.updateProfil = async (req,res,next) => {
     }  
 }
 
+//Fonction de suppression pour la gestion du compte utilisateur
 exports.deleteProfil = async (req,res,next) => {
     try {
         const id = req.params.id

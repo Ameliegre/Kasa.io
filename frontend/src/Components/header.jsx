@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import bars from '../Assets/bars-solid.svg';
 import { useState } from 'react';
 
-
 function Header() {
 
     const signOut = useSignOut();
@@ -41,7 +40,7 @@ function Header() {
                                 <Link to='/favorite'><button className='btn-list'>Favoris</button></Link>
                                 <Link to='/manage_lodge'><button className='btn-list'>Gérer mes annonces</button></Link>
                                 <Link to='/new_lodge'><button className='btn-list'>Créer une annonce</button></Link>
-                                <Link to='/me'><button className='btn-list'>Compte</button></Link>
+                                <Link to={`/me/`}><button className='btn-list'>Compte</button></Link>
                                 <Link to='/login'><button className='btn-list' onClick={logout}>Deconnexion</button></Link>
                             </ul>
                         </div>
